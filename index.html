@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Petrasek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/personalLogo1.png" alt="Home logo">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav-desktop">
+            <ul class="nav__list-desktp">
+                <li class="nav__item-desktop"><a href="/index.html" class="nav__link-desktop">Home</a></li>
+                <li class="nav__item-desktop"><a href="/about.html" class="nav__link-desktop">About</a></li>
+                <li class="nav__item-desktop"><a href="#footer" class="nav__link-desktop">Socials</a></li>
+                <li class="nav__item-desktop"><a href="mailto:josephpetrasek1017@gmail.com" class="nav__link-desktop">Email</a></li>
+            </ul>
+        </nav>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#footer" class="nav__link">Socials</a></li>
+                <li class="nav__item"><a href="mailto:josephpetrasek1017@gmail.com" class="nav__link">Email</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+         <!-- Intro-->
+    <section class="intro" id="home">
+        <div class="intro--container">
+            <div class="intro-left">
+                <div class="intro-left--container">
+                    <h1 class="section__title section__title--hello">Hello!</h1>
+                    <img class="section__title section__title--logo" src="assets/minimal_logo.png" alt="a Personal Logo">
+                </div>
+            </div>
+            <div class="intro-right">
+                <div class="intro-right--container">
+                    <h2 class="section__title section__title--im">
+                        My Name is 
+                    </h2> 
+                    <div class="section__title section__title--joseph">
+                        <h1 class="hacker-name" data-value="Joseph Petrasek">Joseph Petrasek</h1>
+                    </div>
+                    <div class="section__title section__title--role-strip">
+                        <h2 class="section__subtitle section__subtitle--roles" id="roles"></h2>
+                    </div>
+                    <h2 class="section__title section__title--Welcome">
+                        Welcome to my site!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--
+ MY Services
+<section class="my-services" id="services">
+    <h2 class="section__title section__title--services">What I do</h2>
+    <div class="services">
+        <div class="service">
+            <h3>lvnskv</h3>
+            <p>vnsbvodnvpksnvpsjv[mbopksnvpsb</p>
+        </div>
+        <div class="service">
+            <h3>fensvs</h3>
+            <p>vlsnbjnskvpmsl dkpbmsvs</p>
+        </div>
+        <div class="service">
+            <h3>vnksbvn</h3>
+            <p>vnsovjspbjsopvnsjbmdnv9hsvposoi</p>
+        </div>
+    </div>
+    <a href="#work" class="btn">My Work</a>
+</section>
+
+ About Me
+<section class="about-me" id="about">
+    <h2 class ="section__title section__title--about">Who Am I</h2>
+    <p class="section__subtitle section__subtitle--about">hovshsio</p>
+    <div class="about-me__body">
+        <p>wbhosjpsjfvpsjgpwjgpjf</p>
+        <p>vnjsnvdjviodbjodvndiojsvodnidjbf</p>
+    </div>
+    <img src="assets/linkedin.png" alt="some png" class="about-me__image">
+</section>
+-->
+    
+
+    <!-- My Work -->
+
+    <!-- Filter section -->
+    <section class="my-work" id="work">
+        <div class="filter-container" id="filter-container">
+            <div class="filter-container-select">
+                <button class="filter__button">
+                    <img class="filter__button-content filter-icon" src="assets/filter.png" alt="">
+                </button>
+                <div class="filter__dropdown-container">
+                    <button class="filter__dropdown-item" onclick="filterSelection('all')">All</button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('mechanical')"> Mechanical </button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('mechatronics')">Mechatronics</button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('frontend')"> Front-End </button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('backend')"> Back-End </button>
+                </div>
+            </div>
+            <div class="active-filters-container">
+                <button class="active-filter mechanical">
+                    <span class="active-filter-text">Mechanical</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('mechanical','show')">
+                        <span class="cancel-filter1"></span>
+                        <span class="cancel-filter2"></span>
+                    </div>
+                </button>
+                <button class="active-filter mechatronics">
+                    <span class="active-filter-text">Mechatronics</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('mechatronics','show')">
+                        <span class="cancel-filter1"></span>
+                        <span class="cancel-filter2"></span>
+                    </div>
+                </button>
+                <button class="active-filter backend">
+                    <span class="active-filter-text">Back-End</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('backend','show')">
+                        <span class="cancel-filter1"></span>
+                        <span class="cancel-filter2"></span>
+                    </div>
+                </button>
+                <button class="active-filter frontend">
+                    <span class="active-filter-text">Front-End</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('frontend','show')">
+                        <span class="cancel-filter1"></span>
+                        <span class="cancel-filter2"></span>
+                    </div>
+                </button>                
+            </div>
+        </div>
+
+        </div>
+        <div class="portfolio">
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container frontend uiux">
+                <a href="https://aversa.ca/" class="portfolio__item">
+                    <img src="assets/aversaWebsite.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">aversa.ca</h3>
+                            <span class="portfolio-hover_item project-description">Website for Software Company Aversa.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container frontend uiux">
+                <a href="https://www.joinsaule.com" class="portfolio__item">
+                    <img src="assets/joinSaule.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">joinsaule.com</h3>
+                            <span class="portfolio-hover_item project-description">Website for treatment-management platform Saule.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container mechatronics">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/7sd1.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">7SD Project</h3>
+                            <span class="portfolio-hover_item project-description">Displaying a sequence of numbers using sequential logic design on a 7-segment-display.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag" id="project-tag-mechatronics">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Mechatronics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container frontend uiux">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/personalityQuiz.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Personality Quiz</h3>
+                            <span class="portfolio-hover_item project-description">A simple React-built personality quiz with 8 results  & 32 unique routes.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container mechanical">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/awards submit.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Basement Key Project</h3>
+                            <span class="portfolio-hover_item project-description">Modelling & 3D printing lock mechanism to fit Eren Yeager's basement key.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Mechanical</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container backend">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/awards submit.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">1-UP Bot</h3>
+                            <span class="portfolio-hover_item project-description">Discord Bot written in Python automating 8 tasks in community server of 1400+ members.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Back-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container mechanical">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/awards submit.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Dice Insert Foam</h3>
+                            <span class="portfolio-hover_item project-description">Modelled insert foam for a client looking to fit a set of 13 dice in a rectangular case.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Mechanical</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container backend">
+                <a href="/portfolio-item.html" class="portfolio__item">
+                    <img src="assets/awards submit.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Terminal TicTacToe</h3>
+                            <span class="portfolio-hover_item project-description">Terminal version of classic game TicTacToe.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/home.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Back-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+   
+    <!--Footer-->
+    <footer class="footer" id="footer">
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a href="mailto:josephpetrasek1017@gmail.com" class="social-list__link">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/josephpetrasek/">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/petras.ek/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/jpetrasek1217">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="../action.js"></script>
+
+
+
+<!--
+<div class="topPage">
+        <div class="topnav">
+            <a class="navbar-brand" href="/">
+                <div class="Home__logo">
+                      <img src="assets/personalLogo1.png" class="img-fluid" alt="Home Link">
+                </div>
+           </a>
+            <a href="#experience">Experience</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="sidenav">
+            <a href="./" class="side__link">
+                <i class="side__item1"><img src="assets/personalLogo1.png" alt="Home Link"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/josephpetrasek/" class="side__link">
+                <i class="side__item"><img src="assets/linkedin.png" alt="Linkedin Link"></i>
+            </a>
+            <a href="https://github.com/jpetrasek1217" class="side__link">
+                <i class="side__item"><img src="assets/github.png" alt="Github Link"></i>
+            </a>
+            <a href="mailto:josephpetrasek1017gmail.com" class="side__link">
+                <i class="side__item"><img src="assets/email.png" alt="Email me!"></i>
+            </a>
+        </div>
+        <div class="welcomeMessage">
+            <div>
+                <img src="assets/personalLogo1.png" alt="bigLogo">
+            </div>
+            <div class="upperWelcomeMessage">
+                <h1>Hello!</h1>
+                <h3>I'm Joseph, a </h3>
+            </div>
+            <div class="typing-carousel-wrapper">
+                <div class="Typewriter" data-testid="typewriter-wrapper">
+                    <h3>
+                        <span class="Typewriter__wrapper">Example</span>
+                        <span class="Typewriter__cursor">|</span>
+                    </h3>
+                </div>
+            </div>
+            <div class = "lowerWelcomeMessage">
+                <h3>Welcome to my life!</h3>
+            </div>
+        </div>
+    </div>-->
+
+    
+</body>
+</html>

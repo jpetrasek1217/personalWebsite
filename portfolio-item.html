@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Petrasek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/personalLogo1.png" alt="Home logo">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav-desktop">
+            <ul class="nav__list-desktp">
+                <li class="nav__item-desktop"><a href="/index.html" class="nav__link-desktop">Home</a></li>
+                <li class="nav__item-desktop"><a href="/about.html" class="nav__link-desktop">About</a></li>
+                <li class="nav__item-desktop"><a href="#footer" class="nav__link-desktop">Socials</a></li>
+                <li class="nav__item-desktop"><a href="mailto:josephpetrasek1017@gmail.com" class="nav__link-desktop">Email</a></li>
+            </ul>
+        </nav>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#footer" class="nav__link">Socials</a></li>
+                <li class="nav__item"><a href="mailto:josephpetrasek1017@gmail.com" class="nav__link">Email</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Intro-->
+    <section class="pf-intro" id="home">
+        <div class="pf-intro--container">
+            <div class="pf-intro-left">
+                <div class="pf-intro-left--container">
+                    <h1 class="pf-section__title pf-section__title--hello">Introducing...</h1>
+                    <img class="pf-section__title pf-section__title--logo" src="assets/7sd1.png" alt="7SD Project title">
+                </div>
+            </div>
+            <div class="pf-intro-right">
+                <div class="pf-intro-right--container">
+                    <h2 class="pf-section__title pf-section__title--im">
+                        Sequential 
+                    </h2> 
+                    <h1 class="pf-hacker-name">Logic Design</h1>
+                    <div class="pf-section__title pf-section__title--role-strip">
+                        <h2 class="pf-section__subtitle pf-section__subtitle--roles">Using a 7SD</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark">
+        <div class="intro-to-project">
+            <h1 class="h1">Intro</h1>
+            <p>
+                In this electrical project, I employed a 7-segment display to sequentially cycle through 9 randomly generated digits. The project combines principles from digital logic design and sequential logic analysis to create a cycle of states based on specific logic conditions. To optimize the logic, I developed three different circuit designs. These designs were then implemented using NI MultiSim for virtual simulation and later physically realized using a breadboard, flip-flops, and logic gates.
+            </p>
+        </div>
+        <div class="analytical-section">
+            <h1 class="h1">Analytical</h1>
+            <h2>Deriving a Sequence</h2>
+            <p>The randomly generated number was 400386814. This circuit was a bit complex since to display the number 8 in binary I need to use 3 bits. Additionally, there are multiple repeat numbers in my circuit that require another bit to be placed at the front to distinguish the first repeated number from the second. This means I need a total of 5 flip flops to represent each bits change and I need to connect 4 of them to the decoder chip input. Below is a graph of my knowledge so far.</p>
+
+        </div>
+        
+        <h1>
+
+        </h1>
+    </section>
+    <div class="portfolio-item-individual">
+        <p>vnsvnkv</p>
+        <img src="assets/github.png" alt="">
+        <p>vnsvnkv</p>
+        <p>vnsvnkv</p>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer" id="footer">
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a href="mailto:josephpetrasek1017@gmail.com" class="social-list__link">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/josephpetrasek/">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/petras.ek/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/jpetrasek1217">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script src="../action.js"></script>

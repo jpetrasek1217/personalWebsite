@@ -559,6 +559,7 @@ h3 {
 .section__subtitle--roles {
     position: absolute;
     top: 25%;
+    max-width: 70vw;
     opacity: 0;
     margin-right: 4%;
     transition: opacity 0.5s linear;

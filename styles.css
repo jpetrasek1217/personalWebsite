@@ -127,6 +127,15 @@
     }
 }
 
+@media(min-width:1920px){
+    :root{
+        --fs-h1: 6.2rem;
+        --fs-h2: 4.7rem;
+        --fs-h3: 3.5rem;
+        --fs-body: 2.0rem;
+    }
+}
+
 @media(min-width:2000px){
     :root{
         --fs-h1: 7.2rem;
@@ -1017,7 +1026,7 @@ h3 {
     position: relative;
     margin-left: 1%;
     margin-right: 1%;
-    padding: 0.4em 0.8em;
+    padding: 0.3em 0.6em;
     display: flex;
     background-color: var(--clr-dark);
     border: 1px solid var(--clr-accent);
@@ -1035,7 +1044,7 @@ h3 {
 }
 
 .project-tag-item{
-    padding: 0.2em;
+    padding: 0.3em;
     display: flex;
 }
 
@@ -1074,22 +1083,22 @@ h3 {
 
     .project-description{
         font-size: var(--fs-body);
-        width: 100%;
+        width: 90%;
     }
 
     .project-tag-text{
         font-size: var(--fs-body);
-
+        padding-left: em;
     }
 
     .project-tag{
-        padding: 0.4em 0.4em;
+        padding: 0.4em 0.6em;
         display: flex;
     }
 
 
     .project-tag-item{
-        padding: 0.15em;
+        padding: 0.1em;
         
     }
 
@@ -1199,13 +1208,14 @@ h3 {
 }
 
 .about-intro-name{
-    font-size: 20vw;
+    font-size: 15vw;
     margin: 0;
 }
 
 .about-intro-img{
     max-width: 80vw;
     display: flex;
+    margin-right: 1em;
 }
 
 @media(min-width:800px){
@@ -1215,9 +1225,33 @@ h3 {
     }
 
     .about-intro-img{
-        width: 40vw;
+        width: 35vw;
         display: flex;
     }
+}
+
+@media(max-width: 800px){
+    .about-intro-greeting{
+        font-size: 10vw;
+        margin: 0;
+    }
+
+    .about-intro-name{
+        font-size: 10vw;
+        margin-left: 0.25em;
+    }
+
+    .about-intro-text--container{
+        position: absolute;
+        display: flex;
+
+        bottom: -15%;
+        left: 4%;
+    }
+}
+
+.about-description{
+    padding: 2em;
 }
 
 .about-decription--list{
@@ -1238,7 +1272,7 @@ h3 {
     width: 80vw;
     height: 10vw;
     align-items: center;
-    margin: 2em 0em;
+    margin: 14vh 0em;
 }
 
 /* Add a black background color to the top navigation 

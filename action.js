@@ -37,7 +37,6 @@ const roles = [
     "Code Monkey",
     "Graphic Designer",
     "Product Designer",
-    "Founder & CEO of Bromos"
   ];
   
   const rolesElement = document.getElementById("roles");

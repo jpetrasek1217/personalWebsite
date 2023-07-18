@@ -1055,8 +1055,15 @@ h3 {
 }
 
 .project-tag-icon{
-    width: auto;
-    height: 100%;
+    width: 5vw;
+    height: auto;
+}
+
+@media(min-width: 800px){
+    .project-tag-icon{
+        width: 2.0vw;
+        height: auto 
+    }
 }
 
 .project-tag-text{

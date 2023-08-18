@@ -310,13 +310,12 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
 }
 
 .logo{
     display: flex;
-    width: 3.2em;
-    padding: 0.5em;
+    width: 4em;
+    padding: 0.5em 1em;
     height: auto;
 }
 

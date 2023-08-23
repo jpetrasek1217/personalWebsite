@@ -988,13 +988,15 @@ h3 {
 
 .portfolio__item-container{
     position: relative;
-    background-color: rgb(68, 189, 216);
+    background-color: var(--clr-accent);
     overflow: hidden;
     display: none;
+    border-radius: 0.25em;
 }
 
 .portfolio__img{
     width: 100%;
+    
     transition: 
         transform 750ms cubic-bezier(.5,0,.5,1),
         opacity 250ms linear;

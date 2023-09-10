@@ -1339,6 +1339,7 @@ h3 {
 
 .about-life-story{
     padding: 0 2em;
+    padding-top: 1.5em;
     font-size: var(--fs-body);
 }
 
@@ -1348,6 +1349,7 @@ h3 {
 
 .about-hobbies{
     padding: 1em;
+    padding-top: 2em;
 }
 
 .hobbies-title{

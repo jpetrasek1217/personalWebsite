@@ -827,7 +827,7 @@ h3 {
 
   @media(max-width: 800px){
     .filter-container{
-        margin-bottom: 7em;
+        margin-bottom: 8em;
     }
     
   }
@@ -876,7 +876,7 @@ h3 {
   .active-filter{
     color: var(--clr-dark);
     padding: 0.65em;
-    margin: 0.25em.5em;
+    margin: 0.25em 0.1em;
     font-size: var(--fs-body);
     font-family: var(--ff-secondary);
     text-decoration: none;
@@ -906,6 +906,7 @@ h3 {
     width: fit-content;
     border-radius: 999999999999px;
     z-index: 1;
+
   }
 
 .full-cancel-filter{

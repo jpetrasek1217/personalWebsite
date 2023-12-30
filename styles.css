@@ -77,7 +77,7 @@
         --fs-h1: 3rem;
         --fs-h2: 2.2rem;
         --fs-h3: 1.8rem;
-        --fs-body: 1.3rem;
+        --fs-body: 1.0rem;
     }
 }
 
@@ -86,7 +86,7 @@
         --fs-h1: 3.0rem;
         --fs-h2: 2.5rem;
         --fs-h3: 1.8rem;
-        --fs-body: 1.2rem;
+        --fs-body: 1.1rem;
     }
 }
 
@@ -778,6 +778,11 @@ h3 {
 
 /* My Portfolio */
 
+.my-work{
+    color: var(--clr-light);
+    padding: 5em 4em;
+}
+
 /* Dropdown Button */
 .filter__button {
     background-color: rgba(255,255,255,0);
@@ -795,6 +800,10 @@ h3 {
 @media(max-width: 800px){
     .filter__button{
         width: 20vw;
+    }
+
+    .my-work{
+        padding: 5em 2em;
     }
 }
 
@@ -827,20 +836,20 @@ h3 {
 
   @media(max-width: 800px){
     .filter-container{
-        margin-bottom: 8em;
+        margin-bottom: 11em;
     }
     
   }
 
   @media(max-width: 390px){
     .filter-container{
-        margin-bottom: 9em;
+        margin-bottom: 11.5em;
     }
   }
 
   @media(max-width: 300px){
     .filter-container{
-        margin-bottom: 10em;
+        margin-bottom: 12em;
     }
   }
   /* Dropdown Content (Hidden by Default) */
@@ -876,7 +885,7 @@ h3 {
   .active-filter{
     color: var(--clr-dark);
     padding: 0.65em;
-    margin: 0.25em 0.1em;
+    margin: 0.25em 0.25em;
     font-size: var(--fs-body);
     font-family: var(--ff-secondary);
     text-decoration: none;
@@ -888,7 +897,7 @@ h3 {
     white-space: nowrap;
     background-color: var(--clr-accent);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: opacity 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: display 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   .active-filter:focus{
@@ -916,8 +925,8 @@ h3 {
   .cancel-filter1, .cancel-filter2{
     background: var(--clr-dark);
     display: block;
-    width: 1em;
-    height: 0.15em;
+    width: 0.8em;
+    height: 0.105em;
     border-radius: 1em;
     display: block;
     transition: transform 250ms ease-in-out;
@@ -930,7 +939,7 @@ h3 {
   
   .cancel-filter2{
     position: absolute;
-    transform: rotate(-135deg) translate(0.125em,0.125em);
+    transform: rotate(-135deg) translate(0.07em,0.07em);
 }
   
   /* Change color of dropdown links on hover */
@@ -961,9 +970,7 @@ h3 {
 
 
 
-.my-work{
-    color: var(--clr-light);
-}
+
 
 .section__subtitle--work{
     color: var(--clr-accent);

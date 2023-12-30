@@ -37,6 +37,7 @@ const roles = [
     "Code Monkey",
     "Graphic Designer",
     "Product Designer",
+    "UI/UX Designer",
   ];
   
   const rolesElement = document.getElementById("roles");

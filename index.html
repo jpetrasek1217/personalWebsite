@@ -123,10 +123,11 @@
                 </button>
                 <div class="filter__dropdown-container">
                     <button class="filter__dropdown-item" onclick="filterSelection('all')">All</button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('mechanical')"> Mechanical </button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('mechanical')">Mechanical</button>
                     <button class="filter__dropdown-item" onclick="filterSelection('mechatronics')">Mechatronics</button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('frontend')"> Front-End </button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('backend')"> Back-End </button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('frontend')">Front-End</button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('backend')">Back-End</button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('design')">Design</button>
                 </div>
             </div>
             <div class="active-filters-container">
@@ -157,6 +158,13 @@
                         <span class="cancel-filter1"></span>
                         <span class="cancel-filter2"></span>
                     </div>
+                </button>     
+                <button class="active-filter design">
+                    <span class="active-filter-text">Design</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('design','show')">
+                        <span class="cancel-filter1"></span>
+                        <span class="cancel-filter2"></span>
+                    </div>
                 </button>                
             </div>
         </div>
@@ -164,7 +172,60 @@
         </div>
         <div class="portfolio">
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend uiux">
+            <div class="portfolio__item-container frontend backend">
+                <a href="https://drive.google.com/file/d/1sBGH_C0YUxRcCMXWM1ysTod54l1AXhCE/view?usp=sharing" class="portfolio__item">
+                    <img src="assets/GUI.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Pacemaker GUI</h3>
+                            <span class="portfolio-hover_item project-description">GUI for simulating pacemaker input designed & developed with Python's Tkinter library.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Back-End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio__item-container backend mechatronics">
+                <a href="https://github.com/jpetrasek1217/seniorDesignControls" class="portfolio__item">
+                    <img src="assets/seniorDesignControls.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Robotic Car Controls</h3>
+                            <span class="portfolio-hover_item project-description">Wireless robotic movement controls made with transmitting & recieving ESP8266 Wi-Fi microchips.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Back-End</span>
+                                    </div>
+                                </div>
+                                <div class="project-tag" id="project-tag-mechatronics">
+                                    <div class="project-tag-container">
+                                        <img class="project-tag-item project-tag-icon" src="assets/mechatronicsIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Mechatronics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container frontend design">
                 <a href="https://aversa.ca/" class="portfolio__item">
                     <img src="assets/aversaWebsite.png" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -179,6 +240,13 @@
                                         <span class="project-tag-item project-tag-text">Front-End</span>
                                     </div>
                                 </div>
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/designIcon.png" alt="design-logo">
+                                        <span class="project-tag-item project-tag-text">Design</span>
+                                    </div>
+                                </div>
                             </div>
                         </div> 
                     </div>
@@ -186,7 +254,7 @@
             </div>
             
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend uiux">
+            <div class="portfolio__item-container frontend design">
                 <a href="https://www.joinsaule.com" class="portfolio__item">
                     <img src="assets/joinSaule.png" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -199,6 +267,63 @@
                                         <div class="project-tag-background"></div>
                                         <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.png" alt="mechanical-logo">
                                         <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/designIcon.png" alt="design-logo">
+                                        <span class="project-tag-item project-tag-text">Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container frontend design">
+                <a href="https://jpetrasek1217.github.io/MelPersonalityQuiz/" class="portfolio__item">
+                    <img src="assets/personalityQuiz.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Personality Quiz</h3>
+                            <span class="portfolio-hover_item project-description">A simple React-built personality quiz with 8 results & 32 unique routes.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Front-End</span>
+                                    </div>
+                                </div>
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/designIcon.png" alt="design-logo">
+                                        <span class="project-tag-item project-tag-text">Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+            <!--Portfolio item 1-->
+            <div class="portfolio__item-container mechanical">
+                <a href="https://drive.google.com/file/d/1iKH9uQYwXCRT5eOU6CMp10Es395N_5LL/view?usp=sharing" class="portfolio__item">
+                    <img src="assets/basementKeyProject.png" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">Basement Key Project</h3>
+                            <span class="portfolio-hover_item project-description">Modelling & 3D printing custom-design lock mechanism to fit Eren Yeager's basement key.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/mechanicalIcon.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Mechanical</span>
                                     </div>
                                 </div>
                             </div>
@@ -227,68 +352,6 @@
                 </a>
             </div>
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend uiux">
-                <a href="https://jpetrasek1217.github.io/MelPersonalityQuiz/" class="portfolio__item">
-                    <img src="assets/personalityQuiz.png" alt="Item 1" class="portfolio__img">
-                    <div class="label">
-                        <div class="label-container">
-                            <h3 class="portfolio-hover_item project-title">Personality Quiz</h3>
-                            <span class="portfolio-hover_item project-description">A simple React-built personality quiz with 8 results & 32 unique routes.</span>
-                            <div class="portfolio-hover_item project-tag-list">
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.png" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Front-End</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </a>
-            </div>
-            <!--Portfolio item 1-->
-            <div class="portfolio__item-container mechanical">
-                <a href="https://drive.google.com/file/d/1iKH9uQYwXCRT5eOU6CMp10Es395N_5LL/view?usp=sharing" class="portfolio__item">
-                    <img src="assets/basementKeyProject.png" alt="Item 1" class="portfolio__img">
-                    <div class="label">
-                        <div class="label-container">
-                            <h3 class="portfolio-hover_item project-title">Basement Key Project</h3>
-                            <span class="portfolio-hover_item project-description">Modelling & 3D printing lock mechanism to fit Eren Yeager's basement key.</span>
-                            <div class="portfolio-hover_item project-tag-list">
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/mechanicalIcon.png" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Mechanical</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </a>
-            </div>
-            <!--Portfolio item 1-->
-            <div class="portfolio__item-container backend">
-                <a href="https://github.com/jpetrasek1217/1-UP-Bot" class="portfolio__item">
-                    <img src="assets/1UPBot.png" alt="Item 1" class="portfolio__img">
-                    <div class="label">
-                        <div class="label-container">
-                            <h3 class="portfolio-hover_item project-title">1-UP Bot</h3>
-                            <span class="portfolio-hover_item project-description">Discord Bot written in Python automating 8 tasks in community server of 2000+ members.</span>
-                            <div class="portfolio-hover_item project-tag-list">
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.png" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Back-End</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </a>
-            </div>
-            <!--Portfolio item 1-->
             <div class="portfolio__item-container mechanical">
                 <a href="https://drive.google.com/file/d/1oPVr_qgKLLUf7N0oyXvjcvB2YXJzjUXc/view?usp=sharing" class="portfolio__item">
                     <img src="assets/dice.png" alt="Item 1" class="portfolio__img">
@@ -309,25 +372,7 @@
                 </a>
             </div>
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container backend">
-                <a href="https://github.com/jpetrasek1217/TicTacToe" class="portfolio__item">
-                    <img src="assets/tictactoe.png" alt="Item 1" class="portfolio__img">
-                    <div class="label">
-                        <div class="label-container">
-                            <h3 class="portfolio-hover_item project-title">Terminal TicTacToe</h3>
-                            <span class="portfolio-hover_item project-description">Terminal version of classic game TicTacToe written in Python.</span>
-                            <div class="portfolio-hover_item project-tag-list">
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.png" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Back-End</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </a>
-            </div>
+
         </div>
     </section>
     </main>

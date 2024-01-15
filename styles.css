@@ -836,14 +836,14 @@ h3 {
 
   @media(max-width: 800px){
     .filter-container{
-        margin-bottom: 11em;
+        margin-bottom: 12em;
     }
     
   }
 
   @media(max-width: 390px){
     .filter-container{
-        margin-bottom: 11.5em;
+        margin-bottom: 13em;
     }
   }
 
@@ -1411,6 +1411,10 @@ h3 {
     max-height: 100%;
 }
 
+.middle{
+    padding: 1em 3em;
+}
+
 @media(max-width: 1400px){
 
     .about-intro-img{
@@ -1611,6 +1615,10 @@ h3 {
     
     .photography-flex6{
         grid-row: 6;
+    }
+
+    .middle{
+        padding: 1em 2em;
     }
 }
 

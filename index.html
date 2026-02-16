@@ -125,9 +125,7 @@
                     <button class="filter__dropdown-item" onclick="filterSelection('all')">All</button>
                     <button class="filter__dropdown-item" onclick="filterSelection('mechanical')">Mechanical</button>
                     <button class="filter__dropdown-item" onclick="filterSelection('mechatronics')">Mechatronics</button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('frontend')">Front-End</button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('backend')">Back-End</button>
-                    <button class="filter__dropdown-item" onclick="filterSelection('design')">Design</button>
+                    <button class="filter__dropdown-item" onclick="filterSelection('fullstack')">Full Stack</button>
                 </div>
             </div>
             <div class="active-filters-container">
@@ -145,40 +143,46 @@
                         <span class="cancel-filter2"></span>
                     </div>
                 </button>
-                <button class="active-filter backend">
-                    <span class="active-filter-text">Back-End</span>
-                    <div class="full-cancel-filter" onclick="w3RemoveClass('backend','show')">
+                <button class="active-filter fullstack">
+                    <span class="active-filter-text">Full Stack</span>
+                    <div class="full-cancel-filter" onclick="w3RemoveClass('fullstack','show')">
                         <span class="cancel-filter1"></span>
                         <span class="cancel-filter2"></span>
                     </div>
-                </button>
-                <button class="active-filter frontend">
-                    <span class="active-filter-text">Front-End</span>
-                    <div class="full-cancel-filter" onclick="w3RemoveClass('frontend','show')">
-                        <span class="cancel-filter1"></span>
-                        <span class="cancel-filter2"></span>
-                    </div>
-                </button>     
-                <button class="active-filter design">
-                    <span class="active-filter-text">Design</span>
-                    <div class="full-cancel-filter" onclick="w3RemoveClass('design','show')">
-                        <span class="cancel-filter1"></span>
-                        <span class="cancel-filter2"></span>
-                    </div>
-                </button>                
+                </button>              
             </div>
         </div>
 
         </div>
         <div class="portfolio">
             <!--Portfolio item 1-->
+            <div class="portfolio__item-container fullstack">
+                <a href="https://https://thumbnailevaluatornextvercel.vercel.app/" class="portfolio__item">
+                    <img src="assets/thumbnailEvaluator.webp" alt="Item 1" class="portfolio__img">
+                    <div class="label">
+                        <div class="label-container">
+                            <h3 class="portfolio-hover_item project-title">YouTube CTR Evaluator</h3>
+                            <span class="portfolio-hover_item project-description">Full stack application deploying a hybrid ML model to predict views.</span>
+                            <div class="portfolio-hover_item project-tag-list">
+                                <div class="project-tag">
+                                    <div class="project-tag-container">
+                                        <div class="project-tag-background"></div>
+                                        <img class="project-tag-item project-tag-icon" src="assets/assets2/fullstackIconWhite.png" alt="fullstack-logo">
+                                        <span class="project-tag-item project-tag-text">Full Stack</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
             <div class="portfolio__item-container mechanical">
                 <a href="https://drive.google.com/file/d/1DHesK1TKaKy7F1KAuV5Y6Gb2Obp7tmor/view?usp=sharing" class="portfolio__item">
                     <img src="assets/explodedHandle.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
                         <div class="label-container">
                             <h3 class="portfolio-hover_item project-title">Green Propeller</h3>
-                            <span class="portfolio-hover_item project-description">Winning design of the Green Propeller design challenge at MDL's CAD Designathon 2024.</span>
+                            <span class="portfolio-hover_item project-description">Winning design of the Green Propeller challenge at MDL's CAD Designathon 2024.</span>
                             <div class="portfolio-hover_item project-tag-list">
                                 <div class="project-tag">
                                     <div class="project-tag-container">
@@ -193,7 +197,7 @@
                 </a>
             </div>
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend backend">
+            <div class="portfolio__item-container fullstack">
                 <a href="https://drive.google.com/file/d/1sBGH_C0YUxRcCMXWM1ysTod54l1AXhCE/view?usp=sharing" class="portfolio__item">
                     <img src="assets/GUI.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -204,15 +208,8 @@
                                 <div class="project-tag">
                                     <div class="project-tag-container">
                                         <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.webp" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Front-End</span>
-                                    </div>
-                                </div>
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.webp" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Back-End</span>
+                                        <img class="project-tag-item project-tag-icon" src="assets/assets2/fullstackIconWhite.png" alt="fullstack-logo">
+                                        <span class="project-tag-item project-tag-text">Fullstack</span>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +217,7 @@
                     </div>
                 </a>
             </div>
-            <div class="portfolio__item-container backend mechatronics">
+            <div class="portfolio__item-container mechatronics">
                 <a href="https://github.com/jpetrasek1217/seniorDesignControls" class="portfolio__item">
                     <img src="assets/seniorDesignControls.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -228,15 +225,9 @@
                             <h3 class="portfolio-hover_item project-title">Robotic Car Controls</h3>
                             <span class="portfolio-hover_item project-description">Wireless robotic movement controls made with transmitting & recieving ESP8266 Wi-Fi microchips.</span>
                             <div class="portfolio-hover_item project-tag-list">
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <img class="project-tag-item project-tag-icon" src="assets/BackEndIcon.webp" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Back-End</span>
-                                    </div>
-                                </div>
                                 <div class="project-tag" id="project-tag-mechatronics">
                                     <div class="project-tag-container">
-                                        <img class="project-tag-item project-tag-icon" src="assets/mechatronicsIcon.webp" alt="mechanical-logo">
+                                        <img class="project-tag-item project-tag-icon" src="assets/mechatronicsIcon.webp" alt="mechatronics-logo">
                                         <span class="project-tag-item project-tag-text">Mechatronics</span>
                                     </div>
                                 </div>
@@ -246,7 +237,7 @@
                 </a>
             </div>
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend design">
+            <div class="portfolio__item-container fullstack">
                 <a href="https://aversa.ca/" class="portfolio__item">
                     <img src="assets/aversaWebsite.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -257,15 +248,8 @@
                                 <div class="project-tag">
                                     <div class="project-tag-container">
                                         <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.webp" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Front-End</span>
-                                    </div>
-                                </div>
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/designIcon.webp" alt="design-logo">
-                                        <span class="project-tag-item project-tag-text">Design</span>
+                                        <img class="project-tag-item project-tag-icon" src="assets/assets2/fullstackIconWhite.png" alt="fullstack-logo">
+                                        <span class="project-tag-item project-tag-text">Full Stack</span>
                                     </div>
                                 </div>
                             </div>
@@ -275,7 +259,7 @@
             </div>
             
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container frontend design">
+            <div class="portfolio__item-container fullstack">
                 <a href="https://www.joinsaule.com" class="portfolio__item">
                     <img src="assets/joinSaule.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -286,15 +270,8 @@
                                 <div class="project-tag">
                                     <div class="project-tag-container">
                                         <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/frontEndIcon.webp" alt="mechanical-logo">
-                                        <span class="project-tag-item project-tag-text">Front-End</span>
-                                    </div>
-                                </div>
-                                <div class="project-tag">
-                                    <div class="project-tag-container">
-                                        <div class="project-tag-background"></div>
-                                        <img class="project-tag-item project-tag-icon" src="assets/designIcon.webp" alt="design-logo">
-                                        <span class="project-tag-item project-tag-text">Design</span>
+                                        <img class="project-tag-item project-tag-icon" src="assets/assets2/fullstackIconWhite.png" alt="mechanical-logo">
+                                        <span class="project-tag-item project-tag-text">Full Stack</span>
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +282,7 @@
 
            
             <!--Portfolio item 1-->
-            <div class="portfolio__item-container mechanical">
+            <!-- <div class="portfolio__item-container mechanical">
                 <a href="https://drive.google.com/file/d/1iKH9uQYwXCRT5eOU6CMp10Es395N_5LL/view?usp=sharing" class="portfolio__item">
                     <img src="assets/basementKeyProject.webp" alt="Item 1" class="portfolio__img">
                     <div class="label">
@@ -324,7 +301,7 @@
                         </div> 
                     </div>
                 </a>
-            </div>
+            </div> -->
             <!--Portfolio item 1-->
             <div class="portfolio__item-container mechatronics">
                 <a href="https://drive.google.com/file/d/14tz2WTvEt0FKPhs7HUe56HG4ZDnwIGyP/view?usp=sharing" class="portfolio__item">

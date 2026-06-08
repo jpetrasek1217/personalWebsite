@@ -1,12 +1,12 @@
 [
   {
-    "id": "youtube-ctr-evaluator",
-    "title": "YouTube CTR Evaluator",
+    "id": "youtube-video-evaluator",
+    "title": "YouTube Video Evaluator",
     "description": "Full stack application deploying a hybrid ML model to predict views.",
     "thumbnail": "thumbnailEvaluator.webp",
     "niches": ["Full Stack", "AI/ML"],
     "tags": ["Python", "Machine Learning", "React", "FastAPI"],
-    "link": "https://thumbnailevaluatornextvercel.vercel.app/",
+    "link": "/youtube-video-evaluator",
     "visibility": true,
     "extendedDescription": "",
     "page": []

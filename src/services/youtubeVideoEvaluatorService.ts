@@ -26,7 +26,7 @@ function readFileAsBase64(file: File): Promise<string> {
 
 export async function predictViews(
   request: EvaluatorRequest,
-  thumbnail: File
+  thumbnail: File,
 ): Promise<number> {
   const base64Thumbnail = await readFileAsBase64(thumbnail);
   const res = await fetch(`${getApiUrl()}/evaluator/predict`, {

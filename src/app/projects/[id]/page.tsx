@@ -115,7 +115,7 @@ export default async function ProjectDetailPage({
           return (
             <span
               key={niche}
-              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 text-accent font-header font-black text-caption"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark text-light font-header font-black text-caption"
             >
               {Icon && <Icon size={14} />}
               {niche}

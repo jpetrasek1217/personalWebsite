@@ -22,16 +22,6 @@ export default function AnimatedBackground() {
         }}
       />
       <div
-        className="absolute rounded-full opacity-50 will-change-transform animate-orb-3"
-        style={{
-          width: '50vw',
-          height: '50vw',
-          background: 'radial-gradient(circle, #B1FDEF 0%, transparent 70%)',
-          top: '30%',
-          left: '25%',
-        }}
-      />
-      <div
         className="absolute rounded-full opacity-35 will-change-transform animate-orb-4"
         style={{
           width: '40vw',
@@ -39,16 +29,6 @@ export default function AnimatedBackground() {
           background: 'radial-gradient(circle, #C0BBFF 0%, transparent 70%)',
           top: '-5%',
           right: '5%',
-        }}
-      />
-      <div
-        className="absolute rounded-full opacity-45 will-change-transform animate-orb-5"
-        style={{
-          width: '45vw',
-          height: '45vw',
-          background: 'radial-gradient(circle, #9DFCFD 0%, transparent 70%)',
-          bottom: '5%',
-          left: '10%',
         }}
       />
     </div>

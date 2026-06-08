@@ -11,7 +11,7 @@ export default function HeroGrid() {
       <div className='min-[800px]:hidden grid grid-cols-2 gap-x-3 gap-y-2 w-full items-center'>
         {/* A — "Hello", overlaid on top-left of logo */}
         <div className='col-start-1 row-start-1 relative z-20 font-header text-h2 font-black self-end pb-1'>
-          Hello
+          Hello!
         </div>
 
         {/* B — Logo, spans full 2-col width for rows 1–3 */}
@@ -54,7 +54,7 @@ export default function HeroGrid() {
       <div className='hidden min-[800px]:grid max-w-4xl w-full grid-cols-4 gap-x-4 gap-y-2 items-center'>
         {/* Hello */}
         <div className='col-start-1 row-start-1 font-header text-h2 min-[1000px]:text-hero-greeting font-black self-end pb-1'>
-          Hello
+          Hello!
         </div>
         {/* My name is */}
         <div className='col-start-3 col-span-2 row-start-1 font-header text-h3 min-[1000px]:text-hero-label font-black self-end pb-1'>

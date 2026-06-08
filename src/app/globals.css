@@ -35,9 +35,7 @@
   /* Background orb animations */
   --animate-orb-1: orb1 20s ease-in-out alternate infinite;
   --animate-orb-2: orb2 27s ease-in-out alternate infinite;
-  --animate-orb-3: orb3 18s ease-in-out alternate infinite;
   --animate-orb-4: orb4 33s ease-in-out alternate infinite;
-  --animate-orb-5: orb5 24s ease-in-out alternate infinite;
 }
 
 @keyframes orb1 {
@@ -56,14 +54,6 @@
     transform: translate(-10vw, 8vh);
   }
 }
-@keyframes orb3 {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(6vw, -15vh);
-  }
-}
 @keyframes orb4 {
   from {
     transform: translate(0, 0);
@@ -72,12 +62,11 @@
     transform: translate(-7vw, 10vh);
   }
 }
-@keyframes orb5 {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(12vw, -8vh);
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

@@ -13,6 +13,8 @@ import AversaCa from './pages/aversa-ca';
 import JoinsauleCom from './pages/joinsaule-com';
 import SevenSDProject from './pages/7sd-project';
 import DiceInsertFoam from './pages/dice-insert-foam';
+import YouTubeVideoEvaluatorApp from '@/app/youtube-video-evaluator/page';
+import CollapsibleSection from './CollapsibleSection';
 
 const PROJECT_PAGES: Record<string, React.ComponentType> = {
   'youtube-video-evaluator': YouTubeVideoEvaluator,
@@ -25,39 +27,47 @@ const PROJECT_PAGES: Record<string, React.ComponentType> = {
   'dice-insert-foam': DiceInsertFoam,
 };
 
+const FEATURED_COMPONENTS: Record<string, React.ComponentType> = {
+  'youtube-video-evaluator': YouTubeVideoEvaluatorApp,
+};
+
 export default async function ProjectDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
+  const project = projects.find((p) => p.id === id) as
+    | ((typeof projects)[number] & { featuredComponent?: boolean })
+    | undefined;
   if (!project) notFound();
 
   const CustomPage = PROJECT_PAGES[id];
+  const FeaturedComponent = FEATURED_COMPONENTS[id];
 
-  return (
-    <Container className='py-12 max-w-3xl'>
-      {/* Top bar: Back (left) + View Project (right) */}
-      <div className='flex items-center justify-between mb-8'>
-        <Link
-          href='/'
-          className='font-header font-black text-caption text-dark hover:text-accent transition-colors duration-200'>
-          ← Back
-        </Link>
-        {project.link && (
-          <a
-            href={project.link}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='px-5 py-2 bg-accent text-dark font-header font-black text-caption rounded-full hover:scale-105 active:scale-95 transition-transform duration-200'>
-            View Project →
-          </a>
-        )}
-      </div>
+  const navBar = (
+    <div className='flex items-center justify-between'>
+      <Link
+        href='/'
+        className='font-header font-black text-caption text-dark hover:text-accent transition-colors duration-200'>
+        ← Back
+      </Link>
+      {project.link && (
+        <a
+          href={project.link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='px-5 py-2 bg-accent text-dark font-header font-black text-caption rounded-full hover:scale-105 active:scale-95 transition-transform duration-200'>
+          View Project →
+        </a>
+      )}
+    </div>
+  );
 
+  const metaBlock = (
+    <>
       {/* Thumbnail */}
-      <div className='relative max-w-full md:max-w-[60%] mx-auto aspect-video rounded-xl overflow-hidden mb-8 shadow-md'>
+      <div className='relative max-w-full md:max-w-[60%] mx-auto aspect-video rounded-xl overflow-hidden my-8 shadow-md'>
         <Image
           src={`/assets/${project.thumbnail}`}
           alt={project.title}
@@ -92,7 +102,26 @@ export default async function ProjectDetailPage({
           </span>
         ))}
       </div>
+    </>
+  );
 
+  if (project.featuredComponent && FeaturedComponent) {
+    return (
+      <Container className='py-12 max-w-3xl'>
+        {navBar}
+        <FeaturedComponent />
+        <CollapsibleSection>
+          {metaBlock}
+          {CustomPage && <CustomPage />}
+        </CollapsibleSection>
+      </Container>
+    );
+  }
+
+  return (
+    <Container className='py-12 max-w-3xl'>
+      {navBar}
+      {metaBlock}
       {/* Project-specific page content */}
       {CustomPage && <CustomPage />}
     </Container>

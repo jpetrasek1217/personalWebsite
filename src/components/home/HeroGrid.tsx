@@ -6,7 +6,7 @@ import RoleCarousel from './RoleCarousel';
 
 export default function HeroGrid() {
   return (
-    <section className='px-8 min-[500]:px-28 min-[1000]:px-12 pt-6 pb-8 flex items-center justify-center'>
+    <section className='px-8 min-[500]:px-28 min-[1000]:px-12 pt-12 pb-8 flex items-center justify-center'>
       {/* ── Mobile grid (2 cols, < sm) ── */}
       <div className='min-[800px]:hidden grid grid-cols-2 gap-x-3 gap-y-2 w-full items-center'>
         {/* A — "Hello", overlaid on top-left of logo */}

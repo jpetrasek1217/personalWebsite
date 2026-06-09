@@ -22,7 +22,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'Joseph Petrasek',
   description:
-    'Personal portfolio of Joseph Petrasek — Mechatronics Engineer, ML Engineer, and Product Developer.',
+    'Personal portfolio of Joseph Petrasek, Mechatronics Engineer, ML Engineer, and Product Developer.',
   openGraph: {
     title: "Joseph Petrasek's Portfolio",
     description: 'Personal portfolio of Joseph Petrasek.',

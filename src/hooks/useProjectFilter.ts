@@ -7,11 +7,6 @@ export type Niche = 'Mechatronics' | 'Mechanical' | 'Full Stack' | 'AI/ML';
 
 export const ALL_NICHES: Niche[] = ['Mechatronics', 'Mechanical', 'Full Stack', 'AI/ML'];
 
-export type PageItemType =
-  | { type: 'markdown'; content: string }
-  | { type: 'image'; src: string; alt?: string }
-  | { type: 'video'; src: string; title?: string };
-
 export interface Project {
   id: string;
   title: string;
@@ -21,12 +16,10 @@ export interface Project {
   tags: string[];
   link?: string;
   visibility: boolean;
-  extendedDescription?: string;
-  page?: PageItemType[];
 }
 
 export function useProjectFilter() {
-  const [activeFilters, setActiveFilters] = useState<Set<Niche>>(new Set(ALL_NICHES));
+  const [activeFilters, setActiveFilters] = useState<Set<Niche>>(new Set());
 
   const toggleFilter = (niche: Niche) => {
     setActiveFilters(prev => {
@@ -35,18 +28,20 @@ export function useProjectFilter() {
         next.delete(niche);
       } else {
         next.add(niche);
+        // All niches selected = same as no filter; reset to clean state
+        if (next.size === ALL_NICHES.length) return new Set();
       }
-      return next.size === 0 ? new Set(ALL_NICHES) : next;
+      return next;
     });
   };
 
-  const filteredProjects = useMemo(
-    () =>
-      (projects as Project[]).filter(
-        p => p.visibility && p.niches.some(n => activeFilters.has(n))
-      ),
-    [activeFilters]
-  );
+  const filteredProjects = useMemo(() => {
+    const visible = (projects as Project[]).filter(p => p.visibility);
+    if (activeFilters.size === 0) return visible;
+    return visible.filter(p => p.niches.some(n => activeFilters.has(n)));
+  }, [activeFilters]);
 
-  return { activeFilters, toggleFilter, filteredProjects, ALL_NICHES };
+  const isFiltered = activeFilters.size > 0;
+
+  return { activeFilters, toggleFilter, filteredProjects, ALL_NICHES, isFiltered };
 }

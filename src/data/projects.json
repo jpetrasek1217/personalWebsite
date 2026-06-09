@@ -7,21 +7,17 @@
     "niches": ["Full Stack", "AI/ML"],
     "tags": ["Python", "Machine Learning", "React", "FastAPI"],
     "link": "/youtube-video-evaluator",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
-    "id": "green-propeller",
-    "title": "Green Propeller",
-    "description": "Winning design of the Green Propeller challenge at MDL's CAD Designathon 2024.",
+    "id": "gatekeep",
+    "title": "Gatekeep",
+    "description": "Accessible door-handle system designed for those with dexterity impairments. Winner of MDL's Green Propeller CAD Designathon 2024.",
     "thumbnail": "explodedHandle.webp",
     "niches": ["Mechanical"],
-    "tags": ["SolidWorks", "CAD", "Design"],
+    "tags": ["Autodesk Inventor", "CAD", "Design"],
     "link": "https://drive.google.com/file/d/1DHesK1TKaKy7F1KAuV5Y6Gb2Obp7tmor/view?usp=sharing",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "pacemaker-gui",
@@ -31,9 +27,7 @@
     "niches": ["Full Stack"],
     "tags": ["Python", "Tkinter", "GUI"],
     "link": "https://drive.google.com/file/d/1sBGH_C0YUxRcCMXWM1ysTod54l1AXhCE/view?usp=sharing",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "robotic-car-controls",
@@ -43,9 +37,7 @@
     "niches": ["Mechatronics"],
     "tags": ["ESP8266", "Arduino", "C++", "Wireless"],
     "link": "https://github.com/jpetrasek1217/seniorDesignControls",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "aversa-ca",
@@ -55,9 +47,7 @@
     "niches": ["Full Stack"],
     "tags": ["React", "Web Design"],
     "link": "https://aversa.ca/",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "joinsaule-com",
@@ -67,9 +57,7 @@
     "niches": ["Full Stack"],
     "tags": ["React", "Web Design"],
     "link": "https://www.joinsaule.com",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "7sd-project",
@@ -79,9 +67,7 @@
     "niches": ["Mechatronics"],
     "tags": ["Digital Logic", "NI MultiSim", "Circuit Design"],
     "link": "https://drive.google.com/file/d/14tz2WTvEt0FKPhs7HUe56HG4ZDnwIGyP/view?usp=sharing",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   },
   {
     "id": "dice-insert-foam",
@@ -89,10 +75,8 @@
     "description": "Modelled insert foam for a client looking to fit a set of 8 dice in a rectangular case.",
     "thumbnail": "dice.webp",
     "niches": ["Mechanical"],
-    "tags": ["SolidWorks", "3D Modelling", "Client Work"],
+    "tags": ["Autodesk Inventor", "CAD", "Client Work"],
     "link": "https://drive.google.com/file/d/1oPVr_qgKLLUf7N0oyXvjcvB2YXJzjUXc/view?usp=sharing",
-    "visibility": true,
-    "extendedDescription": "",
-    "page": []
+    "visibility": true
   }
 ]

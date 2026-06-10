@@ -9,6 +9,7 @@ import { getToken, isAuthenticated } from '@/utils/auth';
 
 export default function NewPostPage() {
   const router = useRouter();
+  const [slug, setSlug] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [excerpt, setExcerpt] = useState('');
@@ -28,8 +29,9 @@ export default function NewPostPage() {
     try {
       await createPost(
         {
+          slug,
           title,
-          content,
+          content: content || undefined,
           excerpt: excerpt || undefined,
           thumbnail: thumbnail || undefined,
           niches: niches ? niches.split(',').map(s => s.trim()).filter(Boolean) : undefined,
@@ -56,6 +58,10 @@ export default function NewPostPage() {
         <h1 className="font-header font-black text-h2">New Post</h1>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <input type="text" value={slug} onChange={e => setSlug(e.target.value)}
+          placeholder="Slug (e.g. my-post-title — lowercase, hyphens only)" required
+          pattern="[a-z0-9-]+" title="Lowercase letters, numbers, and hyphens only"
+          className={inputClass} />
         <input type="text" value={title} onChange={e => setTitle(e.target.value)}
           placeholder="Title" required className={inputClass} />
         <input type="text" value={excerpt} onChange={e => setExcerpt(e.target.value)}
@@ -65,7 +71,7 @@ export default function NewPostPage() {
         <input type="text" value={niches} onChange={e => setNiches(e.target.value)}
           placeholder="Niches — comma-separated (optional)" className={inputClass} />
         <textarea value={content} onChange={e => setContent(e.target.value)}
-          placeholder="Content (Markdown)" rows={16} required
+          placeholder="Content (Markdown)" rows={16}
           className={`${inputClass} resize-y`} />
         {error && <p className="text-red-500 font-body text-caption">{error}</p>}
         <button type="submit" disabled={loading}

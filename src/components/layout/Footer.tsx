@@ -16,11 +16,6 @@ const SOCIALS = [
     href: 'https://github.com/jpetrasek1217',
     icon: FaGithub,
   },
-  {
-    label: 'itch.io',
-    href: 'https://brotherbroseph.itch.io',
-    icon: FaItchIo,
-  },
 ];
 
 export default function Footer() {

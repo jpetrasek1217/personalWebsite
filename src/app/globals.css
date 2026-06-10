@@ -72,7 +72,7 @@
 
 /* Base gradient as page background — orbs layer on top via AnimatedBackground */
 html {
-  background: linear-gradient(125deg, #a3d9ff 0%, #c4abff 100%);
+  background: linear-gradient(125deg, #abf2ff 0%, #bcb8ff 100%);
   min-height: 100%;
 }
 

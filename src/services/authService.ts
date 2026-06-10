@@ -22,7 +22,16 @@ export async function registerBegin(bootstrapToken: string): Promise<object> {
     method: 'POST',
     headers: { Authorization: `Bearer ${bootstrapToken}` },
   });
-  if (!res.ok) throw new Error('Failed to begin registration');
+  if (!res.ok) {
+    let msg = 'Failed to begin registration';
+    try {
+      const body = await res.json();
+      msg = body.detail ?? body.message ?? body.error ?? msg;
+    } catch {
+      try { msg = (await res.text()) || msg; } catch {}
+    }
+    throw new Error(`${res.status}: ${msg}`);
+  }
   return res.json();
 }
 

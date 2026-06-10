@@ -1,5 +1,14 @@
 [
   {
+    "id": "optimine",
+    "title": "Optimine",
+    "description": "Mechatronics capstone retrofitting legacy mining equipment with electric drive for semi-autonomous swing-axis control.",
+    "thumbnail": "optimine/optimine_thumbnail.png",
+    "niches": ["Mechatronics", "Mechanical"],
+    "tags": ["MATLAB", "Simulink", "PLC", "CAD", "Control Systems"],
+    "visibility": true
+  },
+  {
     "id": "youtube-video-evaluator",
     "title": "YouTube Video Evaluator",
     "description": "Full stack application deploying a hybrid ML model to predict views.",
@@ -9,6 +18,24 @@
     "link": "/youtube-video-evaluator",
     "visibility": true,
     "featuredComponent": true
+  },
+  {
+    "id": "credit-classifier",
+    "title": "Credit Score Classifier",
+    "description": "Comparison of SVM, neural network, and random forest classifiers for predicting credit score class from financial behaviour data.",
+    "thumbnail": "creditClassifier/classifier_cover.webp",
+    "niches": ["AI/ML"],
+    "tags": ["Python", "scikit-learn", "PyTorch", "Machine Learning"],
+    "visibility": true
+  },
+  {
+    "id": "stm32-projects",
+    "title": "STM32 Embedded Projects",
+    "description": "Five embedded systems projects on the STM32F429ZI Discovery Kit, each targeting a distinct hardware and firmware concept.",
+    "thumbnail": "stm32/stm32_thumbnail.png",
+    "niches": ["Mechatronics"],
+    "tags": ["C++", "Embedded Systems", "STM32", "State Machines"],
+    "visibility": true
   },
   {
     "id": "gatekeep",
@@ -41,22 +68,12 @@
     "visibility": true
   },
   {
-    "id": "aversa-ca",
-    "title": "aversa.ca",
-    "description": "Website to showcase Software Company Aversa.",
-    "thumbnail": "aversaWebsite.webp",
-    "niches": ["Full Stack"],
-    "tags": ["React", "Web Design"],
-    "link": "https://aversa.ca/",
-    "visibility": true
-  },
-  {
-    "id": "joinsaule-com",
-    "title": "joinsaule.com",
-    "description": "Website for treatment-management platform Saule.",
+    "id": "saule",
+    "title": "Saule",
+    "description": "UX design case study for a health tech platform consolidating 7 mental health professional tools into one app.",
     "thumbnail": "joinSaule.webp",
     "niches": ["Full Stack"],
-    "tags": ["React", "Web Design"],
+    "tags": ["Figma", "UX Design", "React", "Health Tech"],
     "link": "https://www.joinsaule.com",
     "visibility": true
   },
@@ -67,7 +84,7 @@
     "thumbnail": "7sd1.webp",
     "niches": ["Mechatronics"],
     "tags": ["Digital Logic", "NI MultiSim", "Circuit Design"],
-    "link": "https://drive.google.com/file/d/14tz2WTvEt0FKPhs7HUe56HG4ZDnwIGyP/view?usp=sharing",
+    "link": "https://drive.google.com/file/d/14tz2WTvEt0FSkU56HG4ZDnwIGyP/view?usp=sharing",
     "visibility": true
   },
   {
@@ -77,7 +94,7 @@
     "thumbnail": "dice.webp",
     "niches": ["Mechanical"],
     "tags": ["Autodesk Inventor", "CAD", "Client Work"],
-    "link": "https://drive.google.com/file/d/1oPVr_qgKLLUf7N0oyXvjcvB2YXJzjUXc/view?usp=sharing",
+    "link": "https://drive.google.com/file/d/1oPVr_qgKJYXQPB8NClxKVPBxJUXc/view?usp=sharing",
     "visibility": true
   }
 ]

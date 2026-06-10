@@ -14,6 +14,12 @@ export default function RegisterPasskeyPage() {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      setError('Passkey registration must be done on josephpetrasek.com. Open that site to register.');
+      return;
+    }
+
     setLoading(true);
     try {
       const options = await registerBegin(bootstrapToken);

@@ -167,8 +167,8 @@ export function GridImg({
 export function BulletList({ items }: { items: string[] }) {
   return (
     <ul className='space-y-1.5 font-body text-body pl-5 list-disc list-outside'>
-      {items.map((item) => (
-        <li key={item}>{item}</li>
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
       ))}
     </ul>
   );
@@ -186,9 +186,9 @@ export function ProjectTable({
       <table className='w-full font-body text-body'>
         <thead>
           <tr className='bg-dark text-light'>
-            {headers.map((h) => (
+            {headers.map((h, i) => (
               <th
-                key={h}
+                key={i}
                 className='text-left px-4 py-3 font-header font-black text-caption'>
                 {h}
               </th>

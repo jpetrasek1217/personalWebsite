@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Container from '@/components/layout/Container';
 
-const GALLERY_PHOTOS = ['IMG_4227.webp', 'IMG_5207.webp', 'IMG_5218.webp'];
+const GALLERY_PHOTOS = [
+  'IMG_9716.JPG',
+  'IMG_9397.JPG',
+  'AGRB9114.JPG',
+  'IMG_0075.JPG',
+  'IMG_5218.webp',
+  'IMG_1047.jpg',
+];
 
 export default function AboutPage() {
   return (
@@ -61,7 +68,7 @@ export default function AboutPage() {
             key={photo}
             className='mb-4 break-inside-avoid rounded-xl overflow-hidden shadow-sm'>
             <Image
-              src={`/assets/${photo}`}
+              src={`/assets/about/${photo}`}
               alt={`Gallery photo ${i + 1}`}
               width={600}
               height={800}

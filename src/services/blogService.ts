@@ -35,16 +35,24 @@ export async function fetchPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
-export async function createPost(
-  data: Omit<BlogPost, 'slug'>,
-  token: string
-): Promise<BlogPost> {
+async function throwApiError(res: Response, fallback: string): Promise<never> {
+  let msg = fallback;
+  try {
+    const body = await res.json();
+    msg = body.detail ?? body.message ?? body.error ?? msg;
+  } catch {
+    try { msg = (await res.text()) || msg; } catch {}
+  }
+  throw new Error(`${res.status}: ${msg}`);
+}
+
+export async function createPost(data: BlogPost, token: string): Promise<BlogPost> {
   const res = await fetch(`${getApiUrl()}/posts`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(data),
   });
-  if (!res.ok) throw new Error('Failed to create post');
+  if (!res.ok) await throwApiError(res, 'Failed to create post');
   return res.json();
 }
 
@@ -58,7 +66,7 @@ export async function updatePost(
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(data),
   });
-  if (!res.ok) throw new Error('Failed to update post');
+  if (!res.ok) await throwApiError(res, 'Failed to update post');
   return res.json();
 }
 
@@ -67,5 +75,5 @@ export async function deletePost(slug: string, token: string): Promise<void> {
     method: 'DELETE',
     headers: { Authorization: `Bearer ${token}` },
   });
-  if (!res.ok) throw new Error('Failed to delete post');
+  if (!res.ok) await throwApiError(res, 'Failed to delete post');
 }

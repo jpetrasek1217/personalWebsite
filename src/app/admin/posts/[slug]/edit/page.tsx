@@ -104,7 +104,7 @@ export default function EditPostPage({ params }: { params: Promise<{ slug: strin
         <input type="text" value={niches} onChange={e => setNiches(e.target.value)}
           placeholder="Niches — comma-separated (optional)" className={inputClass} />
         <textarea value={content} onChange={e => setContent(e.target.value)}
-          placeholder="Content (Markdown)" rows={16} required
+          placeholder="Content (Markdown)" rows={16}
           className={`${inputClass} resize-y`} />
         {error && <p className="text-red-500 font-body text-caption">{error}</p>}
         <div className="flex gap-3">

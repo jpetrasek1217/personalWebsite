@@ -1,0 +1,118 @@
+﻿3D Printing Resources
+I find myself struggling to remember how to do the most basic things around configuring my 3D printer so while my parts are printing I will document them here and hopefully it will become part of a blog some day.
+
+
+
+
+Setting up and re-leveling Ender 5 S1 printer
+https://www.youtube.com/watch?v=MhX9aAkVFqI
+Before You Begin
+Materials Needed
+* Ender-5 S1 assembled
+* A4 printer paper (or standard letter paper)
+* Filament loaded (optional for final test print)
+Part 1: Reset Printer Settings
+1. Power on the printer.
+2. From the touchscreen, open:
+   * Settings
+   * Advanced Settings
+   * Reset Configuration
+3. Confirm the reset.
+This ensures you're starting from factory calibration values.
+Part 2: Set Leveling Method
+1. Open:
+   * Settings
+   * Leveling Method
+2. Select the leveling mode recommended by the printer.
+3. Return to the main menu.
+Part 3: Home the Printer
+1. Navigate to the leveling screen.
+2. Press Return to Zero (Home).
+3. Wait for the printer to move the nozzle to its reference position.
+Part 4: Set Initial Nozzle Height
+1. Place a sheet of A4 paper on the print bed directly under the nozzle.
+2. Use the compensation/Z-offset adjustment controls.
+3. Slowly lower the nozzle until the paper can still move, but you feel slight resistance.
+Correct Paper Feel
+✅ Paper slides with light friction
+❌ Paper moves freely with no resistance
+❌ Paper is trapped and cannot move
+Part 5: Manually Level the Four Corners
+The printer will move to each leveling point.
+For each corner:
+1. Move the paper beneath the nozzle.
+2. Turn the corresponding bed-leveling knob.
+   * Clockwise → lowers the bed
+   * Counterclockwise → raises the bed
+3. Adjust until the paper has the same slight drag as before.
+Repeat for:
+* Front Left
+* Front Right
+* Rear Right
+* Rear Left
+Part 6: Repeat Corner Checks
+1. Return to the first corner.
+2. Check all four corners again.
+Because adjusting one corner affects the others, continue making small corrections until:
+* All four corners feel the same.
+* Paper friction is consistent everywhere.
+Part 7: Run Auto Leveling
+1. Open:
+   * Auto Level (AUTO LVL)
+2. Press Start.
+3. Wait while the printer probes multiple points across the bed.
+The printer will create a mesh that compensates for small bed irregularities.
+Do not touch the printer during this process.
+Part 8: Prepare for Z-Offset Calibration
+After auto leveling finishes:
+1. Return to the main screen.
+2. Open:
+   * Prepare
+3. Set the Z-axis value to 50 mm.
+This creates room to safely heat and prepare the printer.
+Part 9: Heat the Nozzle
+1. Open:
+   * Prepare
+   * In/Out
+2. Set nozzle temperature to:
+   * 200°C (for standard PLA)
+3. Wait until the temperature is reached.
+Part 10: Start a Test Print
+1. Select a simple test print (such as a first-layer square).
+2. Begin printing once the printer reaches temperature.
+Part 11: Fine-Tune the Z Offset During Printing
+Watch the first layer carefully.
+Nozzle Too High
+Signs:
+* Filament doesn't stick
+* Lines are round and separated
+Action:
+* Lower the Z-offset slightly (more negative)
+Nozzle Too Low
+Signs:
+* Filament is squished excessively
+* Surface looks rough
+* Nozzle drags through plastic
+Action:
+* Raise the Z-offset slightly (less negative)
+Correct Height
+Signs:
+* Smooth lines
+* Adjacent lines touch
+* Good adhesion
+* Consistent surface appearance
+Adjust the Z-offset in very small increments (typically 0.02–0.05 mm at a time).
+
+
+
+
+Fixing write-only protection on SD card
+https://www.youtube.com/watch?v=htpQlKpjbNw
+1. Plug the SD card into your computer.
+2. Press the Windows Key + R, type cmd, and hit Enter.
+3. Type diskpart and press Enter.
+4. Type list disk and press Enter to find your SD card's number based on its size.
+5. Type select disk # (replace # with your SD card number) and press Enter.
+6. Type attributes disk clear readonly and press Enter.
+7. Safely eject the card, reinject the card to put your model on the card
+8. Safely eject the card again, then try inserting it into the printer to see if the models pop up

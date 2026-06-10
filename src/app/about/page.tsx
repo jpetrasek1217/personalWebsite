@@ -2,17 +2,17 @@ import Image from 'next/image';
 import Container from '@/components/layout/Container';
 
 const GALLERY_PHOTOS = [
-  'IMG_9716.JPG',
-  'IMG_9397.JPG',
   'AGRB9114.JPG',
-  'IMG_0075.JPG',
-  'IMG_5218.webp',
-  'IMG_1047.jpg',
+  'IMG_9397.JPG',
   'attackontitan with all fragments and post processing.webp',
+  'IMG_5218.webp',
   'NXWI3437.JPG',
   'IMG_8417.JPG',
-  'IMG_6764.webp',
+  'IMG_1047.jpg',
+  'IMG_9716.JPG',
   'IMG_0962.webp',
+  'IMG_6764.webp',
+  'IMG_0075.JPG',
 ];
 
 export default function AboutPage() {
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </div>
 
       {/* Photo gallery */}
-      <h2 className='font-header font-black text-h2 mb-6'>Photography</h2>
+      <h2 className='font-header font-black text-h2 mb-6'>Some photos :D</h2>
       <div className='columns-2 md:columns-3 gap-4'>
         {GALLERY_PHOTOS.map((photo, i) => (
           <div

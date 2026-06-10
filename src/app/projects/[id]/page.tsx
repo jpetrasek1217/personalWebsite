@@ -5,7 +5,6 @@ import Container from '@/components/layout/Container';
 import projects from '@/data/projects.json';
 import { NICHE_ICONS } from '@/data/niches';
 
-import YouTubeVideoEvaluator from './pages/youtube-video-evaluator';
 import Gatekeep from './pages/gatekeep';
 import PacemakerGui from './pages/pacemaker-gui';
 import RoboticCarControls from './pages/robotic-car-controls';
@@ -15,7 +14,7 @@ import Saule from './pages/saule';
 import CreditClassifier from './pages/credit-classifier';
 import Optimine from './pages/optimine';
 import Stm32Projects from './pages/stm32-projects';
-import YouTubeVideoEvaluatorApp from '@/app/youtube-video-evaluator/page';
+import YouTubeVideoEvaluator from '@/components/youtube-video-evaluator/YouTubeVideoEvaluator';
 import CollapsibleSection from './CollapsibleSection';
 
 const PROJECT_PAGES: Record<string, React.ComponentType> = {
@@ -32,7 +31,7 @@ const PROJECT_PAGES: Record<string, React.ComponentType> = {
 };
 
 const FEATURED_COMPONENTS: Record<string, React.ComponentType> = {
-  'youtube-video-evaluator': YouTubeVideoEvaluatorApp,
+  'youtube-video-evaluator': YouTubeVideoEvaluator,
 };
 
 export default async function ProjectDetailPage({

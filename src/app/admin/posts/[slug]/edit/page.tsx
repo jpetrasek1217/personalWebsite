@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Container from '@/components/layout/Container';
-import { fetchPost, updatePost, deletePost } from '@/services/blogService';
+import { fetchPost, updatePost, deletePost, uploadImage } from '@/services/blogService';
 import { getToken, isAuthenticated } from '@/utils/auth';
 
 export default function EditPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -17,6 +17,7 @@ export default function EditPostPage({ params }: { params: Promise<{ slug: strin
   const [niches, setNiches] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [fetching, setFetching] = useState(true);
 
@@ -99,8 +100,27 @@ export default function EditPostPage({ params }: { params: Promise<{ slug: strin
           placeholder="Title" required className={inputClass} />
         <input type="text" value={excerpt} onChange={e => setExcerpt(e.target.value)}
           placeholder="Excerpt (optional)" className={inputClass} />
-        <input type="text" value={thumbnail} onChange={e => setThumbnail(e.target.value)}
-          placeholder="Thumbnail URL (optional)" className={inputClass} />
+        <div className="flex gap-2">
+          <input type="text" value={thumbnail} onChange={e => setThumbnail(e.target.value)}
+            placeholder="Thumbnail URL (optional)" className={`${inputClass} flex-1`} />
+          <label className={`px-4 py-3 rounded-xl border border-dark/20 font-body bg-white/70 backdrop-blur-sm cursor-pointer hover:border-accent transition-colors whitespace-nowrap${uploading ? ' opacity-50 pointer-events-none' : ''}`}>
+            {uploading ? 'Uploading…' : 'Upload'}
+            <input type="file" accept="image/*" className="hidden"
+              onChange={async e => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                setUploading(true);
+                try {
+                  setThumbnail(await uploadImage(file, getToken()!));
+                } catch (err) {
+                  setError(err instanceof Error ? err.message : 'Upload failed');
+                } finally {
+                  setUploading(false);
+                  e.target.value = '';
+                }
+              }} />
+          </label>
+        </div>
         <input type="text" value={niches} onChange={e => setNiches(e.target.value)}
           placeholder="Niches — comma-separated (optional)" className={inputClass} />
         <textarea value={content} onChange={e => setContent(e.target.value)}

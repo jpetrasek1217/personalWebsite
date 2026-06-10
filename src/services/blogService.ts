@@ -77,3 +77,16 @@ export async function deletePost(slug: string, token: string): Promise<void> {
   });
   if (!res.ok) await throwApiError(res, 'Failed to delete post');
 }
+
+export async function uploadImage(file: File, token: string): Promise<string> {
+  const form = new FormData();
+  form.append('file', file);
+  const res = await fetch(`${getApiUrl()}/images`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: form,
+  });
+  if (!res.ok) await throwApiError(res, 'Failed to upload image');
+  const { url } = await res.json();
+  return url as string;
+}

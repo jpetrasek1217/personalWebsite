@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 3600,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'api.josephpetrasek.com' },
+    ],
   },
 };
 

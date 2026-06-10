@@ -1,11 +1,25 @@
-import { BulletList, GridImg, ProjectTable, SectionImg } from '@/components/projects/PageBlocks';
+import {
+  BulletList,
+  GridImg,
+  ProjectTable,
+  SectionImg,
+} from '@/components/projects/PageBlocks';
 
 const BASE = '/assets/saule';
 
 const OVERVIEW: string[][] = [
-  ['Product', 'Saule, a health tech platform for streamlining any mental health professional\'s workflow'],
-  ['Users', 'Mental health professionals: therapists, counsellors, and psychiatrists'],
-  ['Role', 'UI/UX Engineer; designed all workflows in Figma, assisted with component development for the company website and app'],
+  [
+    'Product',
+    "Saule, a health tech platform for streamlining any mental health professional's workflow",
+  ],
+  [
+    'Users',
+    'Mental health professionals: therapists, counsellors, and psychiatrists',
+  ],
+  [
+    'Role',
+    'UI/UX Engineer; designed all workflows in Figma, assisted with component development for the company website and app',
+  ],
   ['Timeline', '4 months'],
 ];
 
@@ -43,8 +57,8 @@ export default function Saule() {
             including Material Design, were audited to establish a design
             language that would feel familiar and professional to a clinical
             audience. The goal was to avoid re-teaching practitioners how to use
-            a screen while still delivering a product that felt purpose-built for
-            their context.
+            a screen while still delivering a product that felt purpose-built
+            for their context.
           </p>
         </div>
 
@@ -53,11 +67,11 @@ export default function Saule() {
           <p className='font-body text-body leading-relaxed'>
             Practitioner workflows were mapped as a tree structure. The home
             screen presents a small number of clear entry points; each choice
-            branches into sub-features rather than presenting everything at once.
-            The result is that every individual decision a practitioner makes is
-            a small one, and the interface never exposes the full breadth of the
-            app in a single view. Users can reach any feature in a few deliberate
-            taps without feeling lost.
+            branches into sub-features rather than presenting everything at
+            once. The result is that every individual decision a practitioner
+            makes is a small one, and the interface never exposes the full
+            breadth of the app in a single view. Users can reach any feature in
+            a few deliberate taps without feeling lost.
           </p>
         </div>
 
@@ -70,9 +84,9 @@ export default function Saule() {
             platform) and Facebook, particularly how Facebook organises its
             communities and groups. Facebook was a key reference because it
             separates high-traffic, collaborative surfaces (feeds, groups,
-            community pages) from quieter administrative paths (settings, account
-            management, privacy controls). These represent two fundamentally
-            different modes of thought within the same product.
+            community pages) from quieter administrative paths (settings,
+            account management, privacy controls). These represent two
+            fundamentally different modes of thought within the same product.
           </p>
           <p className='font-body text-body leading-relaxed'>
             Saule mirrors that split. Client and clinician-facing workflows
@@ -81,15 +95,11 @@ export default function Saule() {
             involve back-and-forth between practitioner and client. Independent
             features like settings, billing configuration, and compliance
             documentation follow a contained, step-by-step path because they
-            have a clear start and end with no collaboration required. The result
-            is a navigation model where complexity stays hidden until the
+            have a clear start and end with no collaboration required. The
+            result is a navigation model where complexity stays hidden until the
             practitioner needs it, and every feature lives exactly where they
             would expect to find it.
           </p>
-          <SectionImg
-            src={`${BASE}/saule_communities.png`}
-            alt='ADHD Community social feed in the Saule app, showing the Facebook-inspired community structure'
-          />
         </div>
 
         <div className='space-y-3'>
@@ -106,8 +116,8 @@ export default function Saule() {
         <div className='space-y-3'>
           <h3 className='font-header font-black text-h3'>Prototyping</h3>
           <p className='font-body text-body leading-relaxed'>
-            A high-fidelity interactive prototype was built at desktop resolution
-            to demonstrate the realistic feel of the app for investor
+            A high-fidelity interactive prototype was built at desktop
+            resolution to demonstrate the realistic feel of the app for investor
             presentations and stakeholder demos. The prototype covered all major
             user flows end-to-end so that investors could experience the product
             rather than just look at static screens.
@@ -136,9 +146,10 @@ export default function Saule() {
               className='underline hover:text-accent transition-colors'>
               joinsaule.com
             </a>
-            ) alongside the app design work. This bridged the design-to-development
-            handoff directly and gave Aversa production-ready code for their web
-            presence while the app prototype was being built.
+            ) alongside the app design work. This bridged the
+            design-to-development handoff directly and gave Aversa
+            production-ready code for their web presence while the app prototype
+            was being built.
           </p>
         </div>
       </section>
@@ -186,6 +197,11 @@ export default function Saule() {
             alt='Referral notifications with accept and decline actions'
             label='Referral Notifications'
           />
+          <GridImg
+            src={`${BASE}/saule_communities.png`}
+            alt='ADHD Community social feed in the Saule app, showing the Facebook-inspired community structure'
+            label='Communities'
+          />
         </div>
       </section>
 
@@ -206,8 +222,8 @@ export default function Saule() {
         <p className='font-body text-body leading-relaxed italic text-dark/60'>
           Due to confidentiality agreements with Aversa, detailed design
           artifacts, wireframes, and workflow diagrams cannot be publicly
-          displayed. This case study describes the design process, decisions, and
-          outcomes without reproducing proprietary materials.
+          displayed. This case study describes the design process, decisions,
+          and outcomes without reproducing proprietary materials.
         </p>
       </section>
     </div>

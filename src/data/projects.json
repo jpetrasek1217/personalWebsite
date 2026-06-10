@@ -15,7 +15,6 @@
     "thumbnail": "thumbnailEvaluator.webp",
     "niches": ["Full Stack", "AI/ML"],
     "tags": ["Python", "Machine Learning", "React", "FastAPI"],
-    "link": "/youtube-video-evaluator",
     "visibility": true,
     "featuredComponent": true
   },

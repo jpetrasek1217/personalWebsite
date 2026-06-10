@@ -8,6 +8,11 @@ const GALLERY_PHOTOS = [
   'IMG_0075.JPG',
   'IMG_5218.webp',
   'IMG_1047.jpg',
+  'attackontitan with all fragments and post processing.webp',
+  'NXWI3437.JPG',
+  'IMG_8417.JPG',
+  'IMG_6764.webp',
+  'IMG_0962.webp',
 ];
 
 export default function AboutPage() {

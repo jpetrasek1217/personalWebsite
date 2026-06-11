@@ -1,4 +1,7 @@
-import { FaEnvelope, FaLinkedinIn, FaGithub, FaItchIo } from 'react-icons/fa';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { FaEnvelope, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 const SOCIALS = [
   {
@@ -19,6 +22,23 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const [glowing, setGlowing] = useState(false);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const handler = () => {
+      clearTimeout(timer);
+      setGlowing(false);
+      requestAnimationFrame(() => requestAnimationFrame(() => setGlowing(true)));
+      timer = setTimeout(() => setGlowing(false), 2500);
+    };
+    window.addEventListener('scroll-to-footer', handler);
+    return () => {
+      window.removeEventListener('scroll-to-footer', handler);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <footer
       id='footer'
@@ -30,7 +50,8 @@ export default function Footer() {
           target={href.startsWith('mailto') ? undefined : '_blank'}
           rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
           aria-label={label}
-          className='text-accent hover:text-light active:scale-110 transition-all duration-200 text-2xl'>
+          className='text-accent hover:text-light active:scale-110 transition-all duration-200 text-2xl'
+          style={glowing ? { animation: 'icon-glow 2.5s ease-out forwards' } : undefined}>
           <Icon />
         </a>
       ))}

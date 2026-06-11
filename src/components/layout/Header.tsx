@@ -17,6 +17,13 @@ export default function Header() {
 
   const close = () => setMenuOpen(false);
 
+  const handleContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    close();
+    document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => window.dispatchEvent(new CustomEvent('scroll-to-footer')), 600);
+  };
+
   const linkClass = (href: string) =>
     `font-header font-black text-h3 transition-colors duration-200 hover:text-accent active:scale-110 inline-block ${
       pathname === href ? 'text-accent' : 'text-dark'
@@ -46,6 +53,7 @@ export default function Header() {
             ))}
             <a
               href="#footer"
+              onClick={handleContact}
               className="font-header font-black text-h3 text-dark transition-colors duration-200 hover:text-accent active:scale-110 inline-block"
             >
               Contact
@@ -79,7 +87,7 @@ export default function Header() {
         ))}
         <a
           href="#footer"
-          onClick={close}
+          onClick={handleContact}
           className="font-header font-black text-h3 text-dark transition-colors duration-200 hover:text-accent active:scale-110 inline-block"
         >
           Contact

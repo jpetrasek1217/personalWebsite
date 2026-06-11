@@ -15,10 +15,11 @@ import CreditClassifier from './pages/credit-classifier';
 import Optimine from './pages/optimine';
 import Stm32Projects from './pages/stm32-projects';
 import YouTubeVideoEvaluator from '@/components/youtube-video-evaluator/YouTubeVideoEvaluator';
+import YouTubeVideoEvaluatorPage from './pages/youtube-video-evaluator';
 import CollapsibleSection from './CollapsibleSection';
 
 const PROJECT_PAGES: Record<string, React.ComponentType> = {
-  'youtube-video-evaluator': YouTubeVideoEvaluator,
+  'youtube-video-evaluator': YouTubeVideoEvaluatorPage,
   gatekeep: Gatekeep,
   'pacemaker-gui': PacemakerGui,
   'robotic-car-controls': RoboticCarControls,
@@ -48,13 +49,35 @@ export default async function ProjectDetailPage({
   const CustomPage = PROJECT_PAGES[id];
   const FeaturedComponent = FEATURED_COMPONENTS[id];
 
+  const visibleProjects = (projects as (typeof projects)[number][]).filter(
+    (p) => p.visibility,
+  );
+  const currentIndex = visibleProjects.findIndex((p) => p.id === id);
+  const prevProject = currentIndex > 0 ? visibleProjects[currentIndex - 1] : null;
+  const nextProject =
+    currentIndex < visibleProjects.length - 1
+      ? visibleProjects[currentIndex + 1]
+      : null;
+
+  const navLinkClass =
+    'font-header font-black text-caption text-dark hover:text-accent transition-colors duration-200 max-w-[45%] truncate';
+
   const navBar = (
     <div className='flex items-center justify-between'>
-      <Link
-        href='/'
-        className='font-header font-black text-caption text-dark hover:text-accent transition-colors duration-200'>
-        ← Back
-      </Link>
+      {prevProject ? (
+        <Link href={`/projects/${prevProject.id}`} className={navLinkClass}>
+          ← {prevProject.title}
+        </Link>
+      ) : (
+        <div />
+      )}
+      {nextProject ? (
+        <Link href={`/projects/${nextProject.id}`} className={`${navLinkClass} text-right ml-auto`}>
+          {nextProject.title} →
+        </Link>
+      ) : (
+        <div />
+      )}
     </div>
   );
 

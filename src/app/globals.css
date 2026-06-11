@@ -63,6 +63,12 @@
   }
 }
 
+@keyframes icon-glow {
+  0%   { filter: drop-shadow(0 0 0px #0ac9f5); }
+  35%  { filter: drop-shadow(0 0 12px #0ac9f5); }
+  100% { filter: drop-shadow(0 0 0px #0ac9f5); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;

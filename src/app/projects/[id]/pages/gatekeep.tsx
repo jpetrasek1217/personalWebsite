@@ -3,7 +3,6 @@ import {
   GridImg,
   ProjectTable,
   SectionImg,
-  VideoEmbed,
 } from '@/components/projects/PageBlocks';
 
 const BASE = '/assets/gatekeep';
@@ -161,7 +160,7 @@ export default function Gatekeep() {
             rather than accepted at face value. The final design reflects many
             iterated ideas rather than the first plausible one.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/gatekeep_planning1.webp`}
               alt='Early ideation sketches exploring push and pull concepts'
@@ -190,7 +189,7 @@ export default function Gatekeep() {
             the bolt as the door is pushed, keeping the operation as a single
             continuous motion.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full'>
             <GridImg
               src={`${BASE}/gatekeep_pushDrawing.webp`}
               alt='Technical drawing of the push handle mechanism'
@@ -213,7 +212,7 @@ export default function Gatekeep() {
             traditional bar, which is the movement most painful for arthritic
             joints.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full'>
             <GridImg
               src={`${BASE}/gatekeep_pullDrawing.webp`}
               alt='Technical drawing of the pull handle mechanism'
@@ -273,9 +272,10 @@ export default function Gatekeep() {
           A motion simulation of the full assembly demonstrates how the push,
           pull, and locking components interact as a unified system.
         </p>
-        <VideoEmbed
-          src='https://drive.google.com/file/d/1uPNXqY3p8XOpsLACzJBLgI3g4jxiN96P/preview'
-          title='Gatekeep assembly animation'
+        <img
+          src={`${BASE}/gatekeep_animation.gif`}
+          alt='Gatekeep assembly animation'
+          className='w-full max-w-full lg:max-w-[100%] mx-auto rounded-xl shadow-sm block'
         />
       </section>
     </div>

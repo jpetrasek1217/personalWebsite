@@ -60,12 +60,11 @@ export default function YouTubeVideoEvaluator() {
           made. To work efficiently within this limit, metadata lookups were
           batched at <strong>50 video IDs per API call</strong> (the maximum
           allowed), so each quota unit returned the richest possible payload.
-          Two endpoints were called per batch:{' '}
-          <strong>videos.list</strong> for per-video metadata and{' '}
-          <strong>channels.list</strong> for channel-level statistics. The ID
-          list was randomly shuffled before processing to ensure that any
-          quota-imposed cutoff mid-run would leave a representative sample
-          rather than a category-biased one.
+          Two endpoints were called per batch: <strong>videos.list</strong> for
+          per-video metadata and <strong>channels.list</strong> for
+          channel-level statistics. The ID list was randomly shuffled before
+          processing to ensure that any quota-imposed cutoff mid-run would leave
+          a representative sample rather than a category-biased one.
         </p>
         <p className='font-body text-body leading-relaxed'>
           The final dataset contained <strong>72,215 labelled examples</strong>{' '}
@@ -82,9 +81,7 @@ export default function YouTubeVideoEvaluator() {
         <h2 className='font-header font-black text-h2'>Preprocessing</h2>
 
         <div className='space-y-3'>
-          <h3 className='font-header font-black text-h3'>
-            Data filtering
-          </h3>
+          <h3 className='font-header font-black text-h3'>Data filtering</h3>
           <p className='font-body text-body leading-relaxed'>
             Two categories of videos were removed before training:
           </p>
@@ -121,10 +118,10 @@ export default function YouTubeVideoEvaluator() {
             distributions; a handful of viral videos or mega-channels would
             otherwise dominate gradient updates.{' '}
             <strong>log1p normalization</strong> was applied first to compress
-            these distributions, followed by <strong>min-max scaling</strong>{' '}
-            to [0, 1] across all numeric inputs. This two-step approach keeps
-            the features well-conditioned without discarding the relative
-            ordering information that matters for a popularity prediction task.
+            these distributions, followed by <strong>min-max scaling</strong> to
+            [0, 1] across all numeric inputs. This two-step approach keeps the
+            features well-conditioned without discarding the relative ordering
+            information that matters for a popularity prediction task.
           </p>
         </div>
 
@@ -135,12 +132,12 @@ export default function YouTubeVideoEvaluator() {
           <p className='font-body text-body leading-relaxed'>
             Rather than treating view count as a continuous regression target,
             it was binned into <strong>8 ordinal classes</strong> using
-            equal-width bins on the log-normalized distribution. This
-            framing is more stable: the extreme long-tail of views makes raw
-            regression poorly defined (a model can be arbitrarily far off on
-            viral outliers), while the ordinal classes give the model a
-            well-bounded output space that still preserves meaningful ordering.
-            Each class roughly corresponds to one order of magnitude of views.
+            equal-width bins on the log-normalized distribution. This framing is
+            more stable: the extreme long-tail of views makes raw regression
+            poorly defined (a model can be arbitrarily far off on viral
+            outliers), while the ordinal classes give the model a well-bounded
+            output space that still preserves meaningful ordering. Each class
+            roughly corresponds to one order of magnitude of views.
           </p>
         </div>
 
@@ -177,9 +174,9 @@ export default function YouTubeVideoEvaluator() {
         <h2 className='font-header font-black text-h2'>Model Architecture</h2>
         <p className='font-body text-body leading-relaxed'>
           The model is a <strong>hybrid multimodal neural network</strong> with
-          four parallel input branches (one per modality) whose
-          embeddings are concatenated and passed through a shared fusion head
-          for final classification.
+          four parallel input branches (one per modality) whose embeddings are
+          concatenated and passed through a shared fusion head for final
+          classification.
         </p>
 
         <div className='space-y-3'>
@@ -203,7 +200,7 @@ export default function YouTubeVideoEvaluator() {
             without the vanishing gradient problem that limited deep networks
             before their introduction.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/evaluator_resnet.webp`}
               alt='ResNet50 architecture diagram showing the convolutional pipeline'
@@ -218,13 +215,13 @@ export default function YouTubeVideoEvaluator() {
           </h3>
           <p className='font-body text-body leading-relaxed'>
             Video titles are encoded using{' '}
-            <strong>microsoft/deberta-v3-base</strong>, a transformer trained
-            on a large text corpus. The encoder weights are{' '}
-            <strong>frozen</strong> during training; the model leverages the
-            rich semantic representations already learned during pre-training
-            rather than fine-tuning from scratch, which would require far more
-            data and compute. Titles are tokenized to a maximum of 32 tokens
-            with padding; the last hidden states are aggregated via{' '}
+            <strong>microsoft/deberta-v3-base</strong>, a transformer trained on
+            a large text corpus. The encoder weights are <strong>frozen</strong>{' '}
+            during training; the model leverages the rich semantic
+            representations already learned during pre-training rather than
+            fine-tuning from scratch, which would require far more data and
+            compute. Titles are tokenized to a maximum of 32 tokens with
+            padding; the last hidden states are aggregated via{' '}
             <strong>masked mean pooling</strong> (padding tokens are excluded
             from the average) to produce a single sequence-level representation.
           </p>
@@ -252,7 +249,7 @@ export default function YouTubeVideoEvaluator() {
             dimension, which would be destabilised by the variable padding
             present across examples.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/evaluator_deberta.webp`}
               alt='DeBERTa-v3 architecture diagram showing disentangled attention and relative position embeddings'
@@ -290,7 +287,7 @@ export default function YouTubeVideoEvaluator() {
             regularisation pressure that dropout provides is more valuable in
             the higher-dimensional fusion head.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/evaluator_numeric.webp`}
               alt='Numeric MLP architecture showing batch normalization at input followed by two fully connected layers'
@@ -325,7 +322,7 @@ export default function YouTubeVideoEvaluator() {
             generalised pattern. Forcing some embedding dimensions to zero
             during training prevents this co-adaptation.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/evaluator_metadata.webp`}
               alt='Metadata encoder architecture showing fully connected layers with dropout'
@@ -340,9 +337,7 @@ export default function YouTubeVideoEvaluator() {
             The four branch embeddings are concatenated into a single{' '}
             <strong>2400-dimensional</strong> vector (2048 + 256 + 64 + 32) and
             passed through three successive blocks of{' '}
-            <strong>
-              Linear → Batch Normalization → Dropout → ReLU
-            </strong>{' '}
+            <strong>Linear → Batch Normalization → Dropout → ReLU</strong>{' '}
             (dimensions 2400→1024→256→256), followed by a final{' '}
             <strong>Linear(256→8)</strong> classification layer.
           </p>
@@ -353,8 +348,8 @@ export default function YouTubeVideoEvaluator() {
             tabular values all live on different scales and have different
             statistical properties. Batch Normalization re-centres and rescales
             each layer&apos;s activations so the optimizer encounters a stable
-            loss landscape regardless of which modality is currently contributing
-            the most signal.
+            loss landscape regardless of which modality is currently
+            contributing the most signal.
           </p>
           <p className='font-body text-body leading-relaxed'>
             Dropout is applied at 0.3 in the first fusion layer and 0.1 in
@@ -366,7 +361,7 @@ export default function YouTubeVideoEvaluator() {
             in later layers preserves the finer-grained representations that
             have already been distilled.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/evaluator_head.webp`}
               alt='Fusion head architecture showing repeated FC-BatchNorm-Dropout-ReLU blocks'
@@ -380,8 +375,8 @@ export default function YouTubeVideoEvaluator() {
             Training and results
           </h3>
           <p className='font-body text-body leading-relaxed'>
-            The model was trained with the <strong>AdamW</strong> optimizer
-            (lr 2×10⁻⁴, weight decay 10⁻⁴) and a cosine-annealed learning rate
+            The model was trained with the <strong>AdamW</strong> optimizer (lr
+            2×10⁻⁴, weight decay 10⁻⁴) and a cosine-annealed learning rate
             schedule with a 10-epoch linear warmup. A{' '}
             <strong>class-weighted cross-entropy loss</strong> was used to
             counteract the severe class imbalance in the view distribution;
@@ -398,10 +393,7 @@ export default function YouTubeVideoEvaluator() {
             confirming <strong>45.25 %</strong> accuracy and a weighted F1 of
             0.46:
           </p>
-          <ProjectTable
-            headers={['Split', 'Accuracy']}
-            rows={CV_RESULTS}
-          />
+          <ProjectTable headers={['Split', 'Accuracy']} rows={CV_RESULTS} />
           <p className='font-body text-body leading-relaxed'>
             For an 8-class ordinal problem where random guessing yields only{' '}
             <strong>12.5 %</strong>, this represents a strong proof of concept.
@@ -476,8 +468,8 @@ export default function YouTubeVideoEvaluator() {
             resized and cropped to 128×128, and the title is tokenized by
             DeBERTa&apos;s tokenizer to the same 32-token sequence length used
             during training. Keeping the inference pipeline identical to
-            training is essential; any discrepancy between the two would silently
-            degrade predictions.
+            training is essential; any discrepancy between the two would
+            silently degrade predictions.
           </p>
         </div>
 

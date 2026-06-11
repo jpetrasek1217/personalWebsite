@@ -169,38 +169,42 @@ export default function Saule() {
 
       {/* Key Design Decisions Screenshots */}
       <section className='space-y-4'>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='flex flex-wrap justify-center sm:grid sm:w-full sm:grid-cols-3 gap-4 items-end lg:px-40'>
           <GridImg
             src={`${BASE}/saule_scheduling.png`}
             alt='Scheduling request form with clock-wheel time picker'
             label='Scheduling Request'
+            shadow={false}
           />
           <GridImg
             src={`${BASE}/saule_journaling.png`}
             alt='Client journal entry view'
             label='Client Journal'
+            shadow={false}
           />
           <GridImg
             src={`${BASE}/saule_bulletein.png`}
             alt='Referrals client list with clinicians and clients tabs'
             label='Referrals'
+            shadow={false}
           />
-        </div>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
           <GridImg
             src={`${BASE}/saule_resources.png`}
             alt='Resources hub with grid of resource types including journals, clinicians, hotlines, and peer groups'
             label='Resources Hub'
+            shadow={false}
           />
           <GridImg
             src={`${BASE}/saule_referrals.png`}
             alt='Referral notifications with accept and decline actions'
             label='Referral Notifications'
+            shadow={false}
           />
           <GridImg
             src={`${BASE}/saule_communities.png`}
             alt='ADHD Community social feed in the Saule app, showing the Facebook-inspired community structure'
             label='Communities'
+            shadow={false}
           />
         </div>
       </section>

@@ -16,14 +16,14 @@ const DIMENSIONAL_CONSTRAINTS = [
 ];
 
 const DICE_DIMENSIONS = [
-  ['d20', '21.5 mm / 26.5 mm', 'Face-to-face / Tip-to-tip'],
-  ['d12', '20.5 mm', 'Face-to-face'],
-  ['d10', '26 mm', 'Point-to-point'],
-  ['d10 Percentile', '26 mm', 'Point-to-point'],
-  ['d8', '27 mm', 'Point-to-point'],
-  ['d6', '16 mm', 'Face-to-face'],
-  ['d4', '20.1 mm', 'Base-to-point'],
-  ['Crystal', '14 × 11.5 × 25.5 mm', 'Height × Width × Length'],
+  ['d20', '21.5 / 26.5', 'Face-to-face / Tip-to-tip'],
+  ['d12', '20.5', 'Face-to-face'],
+  ['d10', '26', 'Point-to-point'],
+  ['d10 Percentile', '26', 'Point-to-point'],
+  ['d8', '27', 'Point-to-point'],
+  ['d6', '16', 'Face-to-face'],
+  ['d4', '20.1', 'Base-to-point'],
+  ['Crystal', '14 × 11.5 × 25.5', 'Height × Width × Length'],
 ];
 
 const SKILLS = [
@@ -205,7 +205,7 @@ export default function DiceInsertFoam() {
           <h3 className='font-header font-black text-h3'>
             Crystal Reference Images
           </h3>
-          <div className='flex gap-4 items-start justify-center'>
+          <div className='grid sm:grid-cols-3 lg:mx-30 gap-4 items-end justify-center'>
             {' '}
             <GridImg
               src={`${BASE}/odysseyDice_crystalAlone.webp`}
@@ -228,12 +228,8 @@ export default function DiceInsertFoam() {
         <div className='space-y-3'>
           <h3 className='font-header font-black text-h3'>Dice Dimensions</h3>
           <ProjectTable
-            headers={['Component', 'Dimension', 'Measurement Method']}
+            headers={['Component', 'Dimension (mm)', 'Measurement Method']}
             rows={DICE_DIMENSIONS}
-          />
-          <SectionImg
-            src={`${BASE}/odysseyDice_finalCutFoam.webp`}
-            alt='Crystal die cavity diagram'
           />
         </div>
       </section>
@@ -247,8 +243,7 @@ export default function DiceInsertFoam() {
           visual consistency across the package, and respect manufacturing
           limitations of foam cutting processes.
         </p>
-
-        <div className='flex gap-2 sm:gap-4 items-start justify-center'>
+        <div className='grid sm:grid-cols-3 gap-2 lg:mx-30 sm:gap-4 items-end justify-center'>
           <GridImg
             src={`${BASE}/odysseyDice_d20.webp`}
             alt='D20 cavity'
@@ -266,7 +261,7 @@ export default function DiceInsertFoam() {
           />
         </div>
 
-        <div className='flex gap-2 sm:gap-4 items-start justify-center'>
+        <div className='grid sm:grid-cols-2 gap-2 lg:mx-30 sm:gap-4 items-end justify-center'>
           <GridImg
             src={`${BASE}/odysseyDice_d8.webp`}
             alt='D8 cavity'
@@ -278,7 +273,7 @@ export default function DiceInsertFoam() {
             label='D6'
           />
         </div>
-        <div className='flex gap-2 sm:gap-4 items-start justify-center'>
+        <div className='grid sm:grid-cols-2 gap-2 lg:mx-30 sm:gap-4 items-end justify-center'>
           <GridImg
             src={`${BASE}/odysseyDice_d4.webp`}
             alt='D4 cavity'

@@ -101,10 +101,12 @@ export function GridImg({
   src,
   alt,
   label,
+  shadow = true,
 }: {
   src: string;
   alt: string;
   label: string;
+  shadow?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
@@ -127,15 +129,15 @@ export function GridImg({
   return (
     <>
       <div
-        className='space-y-2 cursor-zoom-in shrink-0'
+        className='w-[80vw] sm:w-full space-y-2 cursor-zoom-in shrink-0 flex flex-col items-center'
         onClick={() => setOpen(true)}>
         <Image
           src={src}
           alt={alt}
           width={0}
           height={0}
-          className='h-30 sm:h-52 lg:h-72 w-auto rounded-xl shadow-sm'
-          sizes='(max-width: 768px) 50vw, 400px'
+          className={`w-full h-auto rounded-xl${shadow ? ' shadow-sm' : ''}`}
+          sizes='(max-width: 768px) 100vw, 800px'
         />
         <p className='font-header font-black text-caption text-center'>
           {label}
@@ -151,7 +153,7 @@ export function GridImg({
               height={0}
               onLoad={onLightboxLoad}
               style={expandedStyle}
-              className='max-w-[80vw] max-h-[80vh] w-auto h-auto rounded-xl shadow-xl'
+              className='max-w-[min(80vw,80vh)] max-h-[min(80vw,80vh)] w-auto h-auto rounded-xl shadow-xl'
               sizes='80vw'
             />
             <p className='font-header font-black text-caption text-center text-white/80'>
@@ -182,8 +184,8 @@ export function ProjectTable({
   rows: string[][];
 }) {
   return (
-    <div className='rounded-xl overflow-hidden shadow-sm border border-dark/10'>
-      <table className='w-full font-body text-body'>
+    <div className='rounded-xl overflow-x-auto shadow-sm border border-dark/10'>
+      <table className='min-w-full font-body text-body'>
         <thead>
           <tr className='bg-dark text-light'>
             {headers.map((h, i) => (
@@ -216,27 +218,35 @@ export function ProjectTable({
 export function VideoEmbed({ src, title }: { src: string; title: string }) {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
+  const fallbackHref = src.replace(/\/preview$/, '/view');
+
   return (
     <>
       <div
-        className='max-w-full md:max-w-[60%] mx-auto aspect-video rounded-xl overflow-hidden shadow-sm cursor-zoom-in'
+        className='max-w-full md:max-w-[60%] mx-auto aspect-video rounded-xl overflow-hidden shadow-sm cursor-pointer bg-dark/10 flex flex-col items-center justify-center gap-3 group'
         onClick={() => setOpen(true)}>
-        <iframe
-          src={src}
-          className='w-full h-full pointer-events-none'
-          allow='autoplay'
-          title={title}
-        />
+        <div className='text-5xl text-dark/40 group-hover:text-accent transition-colors duration-200'>▶</div>
+        <p className='font-header font-black text-caption text-dark/50 group-hover:text-accent transition-colors duration-200 text-center px-4'>{title}</p>
       </div>
       {open && (
         <LightboxOverlay onClose={close}>
-          <div className='w-[80vw] aspect-video rounded-xl overflow-hidden shadow-xl'>
-            <iframe
-              src={src}
-              className='w-full h-full'
-              allow='autoplay'
-              title={title}
-            />
+          <div className='space-y-3 flex flex-col items-center'>
+            <div className='w-[min(80vw,80vh)] aspect-video rounded-xl overflow-hidden shadow-xl'>
+              <iframe
+                src={src}
+                className='w-full h-full'
+                allow='autoplay; fullscreen'
+                allowFullScreen
+                title={title}
+              />
+            </div>
+            <a
+              href={fallbackHref}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='font-header font-black text-caption text-white/60 hover:text-white transition-colors duration-200'>
+              Open in Google Drive ↗
+            </a>
           </div>
         </LightboxOverlay>
       )}

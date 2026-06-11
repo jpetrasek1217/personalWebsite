@@ -1,11 +1,23 @@
-import { BulletList, GridImg, ProjectTable } from '@/components/projects/PageBlocks';
+import {
+  BulletList,
+  GridImg,
+  ProjectTable,
+} from '@/components/projects/PageBlocks';
 
 const BASE = '/assets/creditClassifier';
 
 const RESULTS: string[][] = [
-  ['Random Forest', '79 %', 'Best performer; ensemble structure handles tabular feature interactions well'],
+  [
+    'Random Forest',
+    '79 %',
+    'Best performer; ensemble structure handles tabular feature interactions well',
+  ],
   ['SVM (RBF)', '72–75 %', 'Competitive; sensitive to C and gamma tuning'],
-  ['Neural Network', '71 %', 'Heavy regularisation limited capacity on the minority class'],
+  [
+    'Neural Network',
+    '71 %',
+    'Heavy regularisation limited capacity on the minority class',
+  ],
   ['Majority-class baseline', '53 %', 'Always predicts Standard'],
   ['Random baseline', '33 %', '3-class uniform random'],
 ];
@@ -33,9 +45,9 @@ export default function CreditClassifier() {
           Approximately <strong>36,000 labelled examples</strong> with 30
           financial behaviour features. The target classes are class-imbalanced:
           Standard is the most common, and Good is the smallest class, which
-          influenced regularisation and weighting decisions for all three models.
-          10-fold stratified cross-validation was used throughout so that every
-          evaluation reflects the full data distribution.
+          influenced regularisation and weighting decisions for all three
+          models. 10-fold stratified cross-validation was used throughout so
+          that every evaluation reflects the full data distribution.
         </p>
         <BulletList
           items={[
@@ -72,10 +84,11 @@ export default function CreditClassifier() {
             search under 10-fold cross-validation. A One-vs-One multi-class
             strategy trains a separate binary classifier for each pair of
             classes. The core concept is that kernel methods project
-            non-linearly separable financial data into a higher-dimensional space
-            where a maximum-margin linear boundary can be found. This gives SVMs
-            strong performance on structured tabular data without requiring a
-            deep architecture. Achieved <strong>72–75% accuracy</strong>.
+            non-linearly separable financial data into a higher-dimensional
+            space where a maximum-margin linear boundary can be found. This
+            gives SVMs strong performance on structured tabular data without
+            requiring a deep architecture. Achieved{' '}
+            <strong>72–75% accuracy</strong>.
           </p>
         </div>
 
@@ -95,7 +108,7 @@ export default function CreditClassifier() {
             the underrepresented Good class, which is visible in the confusion
             matrix. Achieved <strong>71% accuracy</strong>.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='grid gap-2 lg:mx-30 sm:gap-4 items-end justify-center'>
             <GridImg
               src={`${BASE}/final_nn_graph.png`}
               alt='Neural network training and validation loss and accuracy curves across iterations'
@@ -123,7 +136,7 @@ export default function CreditClassifier() {
             decisions. Achieved <strong>79% accuracy</strong>, the best of the
             three models.
           </p>
-          <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+          <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/final_cm_rf.png`}
               alt='Random forest confusion matrix showing per-class prediction accuracy'
@@ -141,10 +154,7 @@ export default function CreditClassifier() {
       {/* Results */}
       <section className='space-y-4'>
         <h2 className='font-header font-black text-h2'>Results</h2>
-        <ProjectTable
-          headers={['Model', 'Accuracy', 'Notes']}
-          rows={RESULTS}
-        />
+        <ProjectTable headers={['Model', 'Accuracy', 'Notes']} rows={RESULTS} />
       </section>
 
       {/* Key Findings */}
@@ -153,8 +163,8 @@ export default function CreditClassifier() {
         <BulletList
           items={[
             'Outstanding debt, credit mix, and interest rate were the three most predictive features across all models.',
-            'Random Forest\'s ensemble structure is well-suited to tabular financial data at this dataset size; it outperformed the neural network without requiring careful regularisation tuning.',
-            'The neural network\'s confusion matrices show significant Good/Standard blending. A larger dataset or lighter regularisation would likely close this gap.',
+            "Random Forest's ensemble structure is well-suited to tabular financial data at this dataset size; it outperformed the neural network without requiring careful regularisation tuning.",
+            "The neural network's confusion matrices show significant Good/Standard blending. A larger dataset or lighter regularisation would likely close this gap.",
             'All three models substantially beat both the majority-class baseline (53%) and the random baseline (33%), confirming that the financial features carry genuine predictive signal.',
           ]}
         />

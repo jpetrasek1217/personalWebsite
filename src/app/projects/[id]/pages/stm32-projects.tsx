@@ -35,13 +35,14 @@ export default function Stm32Projects() {
           tracked and displayed on the LCD.
         </p>
         <p className='font-body text-body leading-relaxed'>
-          The key embedded concept is <strong>state machine architecture</strong>:
-          giving each state a single, well-defined responsibility and a clear
-          entry condition. This is the fundamental pattern that makes complex
-          embedded behaviour testable and maintainable, because any bug can be
-          traced to a specific state rather than to tangled global logic.
+          The key embedded concept is{' '}
+          <strong>state machine architecture</strong>: giving each state a
+          single, well-defined responsibility and a clear entry condition. This
+          is the fundamental pattern that makes complex embedded behaviour
+          testable and maintainable, because any bug can be traced to a specific
+          state rather than to tangled global logic.
         </p>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
           <GridImg
             src={`${BASE}/stm32_reactionTimeChart.png`}
             alt='State machine diagram for the reaction time game showing state transitions'
@@ -73,7 +74,7 @@ export default function Stm32Projects() {
           events and enables responsive real-time behaviour that polling cannot
           reliably achieve.
         </p>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='grid sm:grid-cols-2 gap-4 items-end justify-center w-full lg:px-40'>
           <GridImg
             src={`${BASE}/stm32_screamFanCircuit.png`}
             alt='Circuit schematic for the sound-triggered fan including MOSFET gate driver'
@@ -113,7 +114,7 @@ export default function Stm32Projects() {
           Hysteresis is a widely used technique in thermostats, motor drivers,
           and comparator circuits for exactly this reason.
         </p>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-80'>
           <GridImg
             src={`${BASE}/stm32_tempControlChart.PNG`}
             alt='Data flow diagram for the temperature-controlled fan system'
@@ -149,9 +150,9 @@ export default function Stm32Projects() {
           controlling any stepper-driven system, from 3D printers to CNC
           machines.
         </p>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
           <GridImg
-            src={`${BASE}/stm32_motorChart.jpg`}
+            src={`${BASE}/stm32_motorChart.png`}
             alt='Data flow diagram for the stepper motor controller'
             label='System Data Flow'
           />
@@ -187,9 +188,9 @@ export default function Stm32Projects() {
           patterns appear across nearly every I2C sensor and memory device in
           embedded development.
         </p>
-        <div className='flex flex-wrap gap-4 items-start justify-center w-full'>
+        <div className='flex flex-wrap gap-4 items-end justify-center w-full lg:px-40'>
           <GridImg
-            src={`${BASE}/stm32_timeKeepingChart.jpg`}
+            src={`${BASE}/stm32_timeKeepingChart.png`}
             alt='Data flow diagram for the RTC time keeping system with EEPROM storage'
             label='System Data Flow'
           />

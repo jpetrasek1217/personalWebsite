@@ -260,7 +260,7 @@ export default function PacemakerGui() {
               'Out-of-range inputs show an error message listing the exact acceptable range, so users can correct without guessing',
             ]}
           />
-          <div className='flex flex-wrap gap-4 items-start justify-center'>
+          <div className='flex flex-wrap md:grid md:grid-cols-2 gap-4 items-end justify-center lg:px-20'>
             <GridImg
               src={`${BASE}/pacemaker_welcome.webp`}
               alt='Welcome Screen'
@@ -313,20 +313,20 @@ export default function PacemakerGui() {
           <p className='font-body text-body leading-relaxed'>
             The checksum is an index-weighted linear combination of all
             parameter values: <strong>checksum = Σ(i × xᵢ)</strong>. Weighting
-            by index is intentional: a simple sum would not detect if two
-            values swapped positions in the packet, but the weighted sum
-            produces a different result if the order changes. This verifies both
-            integrity and ordering with a single value.
+            by index is intentional: a simple sum would not detect if two values
+            swapped positions in the packet, but the weighted sum produces a
+            different result if the order changes. This verifies both integrity
+            and ordering with a single value.
           </p>
           <p className='font-body text-body leading-relaxed'>
             For E-gram requests, the DCM sends only a sync code and function
             code (34). The pacemaker responds with{' '}
             <strong>2 seconds of atrial and ventricular voltage data</strong>.
             Two seconds was chosen because at the minimum pacing rate of 30 BPM,
-            a complete pulse cycle occurs every 2 seconds, guaranteeing at
-            least one pulse is captured in every request.
+            a complete pulse cycle occurs every 2 seconds, guaranteeing at least
+            one pulse is captured in every request.
           </p>
-          <div className='flex justify-center'>
+          <div className='flex justify-center lg:px-40'>
             <GridImg
               src={`${BASE}/pacemaker_serial.webp`}
               alt='Serial Link'

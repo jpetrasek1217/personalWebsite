@@ -20,12 +20,7 @@
   --text-h2: 1.75rem;
   --text-h3: 1.5rem;
   --text-subtitle: 1.2rem;
-  --text-caption: 1rem; /* --text-display: 4rem;
-  --text-h1: 2.75rem;
-  --text-h2: 2rem;
-  --text-h3: 1.625rem;
-  --text-subtitle: 1.125rem;
-  --text-caption: 0.9375rem; */
+  --text-caption: 1rem;
 
   /* Hero-only scale — used exclusively in HeroGrid */
   --text-hero-name: 4rem;

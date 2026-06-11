@@ -90,7 +90,7 @@ export default async function ProjectDetailPage({
           alt={project.title}
           fill
           className='object-cover'
-          sizes='(max-width: 768px) 50vw, 448px'
+          sizes='(max-width: 768px) 100vw, 448px'
           priority
         />
       </div>
@@ -131,6 +131,7 @@ export default async function ProjectDetailPage({
           {metaBlock}
           {CustomPage && <CustomPage />}
         </CollapsibleSection>
+        <div className='mt-12'>{navBar}</div>
       </Container>
     );
   }
@@ -141,6 +142,7 @@ export default async function ProjectDetailPage({
       {metaBlock}
       {/* Project-specific page content */}
       {CustomPage && <CustomPage />}
+      <div className='mt-12'>{navBar}</div>
     </Container>
   );
 }

@@ -115,7 +115,6 @@ export function GridImg({
   function onLightboxLoad(e: React.SyntheticEvent<HTMLImageElement>) {
     const { naturalWidth: nw, naturalHeight: nh } = e.currentTarget;
     const larger = Math.max(nw, nh);
-    console.log('nw: ', nw, '   nh: ', nh, '   larger: ', larger);
     if (larger < 800) {
       const scale = 800 / larger;
       setExpandedStyle(

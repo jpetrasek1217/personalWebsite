@@ -160,7 +160,7 @@ export default function Gatekeep() {
             rather than accepted at face value. The final design reflects many
             iterated ideas rather than the first plausible one.
           </p>
-          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full lg:px-40'>
+          <div className='flex flex-wrap sm:grid sm:grid-cols-2 gap-4 items-end justify-center w-full lg:px-40'>
             <GridImg
               src={`${BASE}/gatekeep_planning1.webp`}
               alt='Early ideation sketches exploring push and pull concepts'
@@ -189,7 +189,7 @@ export default function Gatekeep() {
             the bolt as the door is pushed, keeping the operation as a single
             continuous motion.
           </p>
-          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full'>
+          <div className='flex flex-wrap sm:grid sm:grid-cols-2 gap-4 items-end justify-center w-full'>
             <GridImg
               src={`${BASE}/gatekeep_pushDrawing.webp`}
               alt='Technical drawing of the push handle mechanism'
@@ -212,7 +212,7 @@ export default function Gatekeep() {
             traditional bar, which is the movement most painful for arthritic
             joints.
           </p>
-          <div className='grid grid-cols-2 gap-4 items-end justify-center w-full'>
+          <div className='flex flex-wrap sm:grid sm:grid-cols-2 gap-4 items-end justify-center w-full'>
             <GridImg
               src={`${BASE}/gatekeep_pullDrawing.webp`}
               alt='Technical drawing of the pull handle mechanism'
